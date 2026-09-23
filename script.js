@@ -240,9 +240,6 @@ function initDynamicContent() {
   // Render Skills
   renderSkills();
 
-  // Render Experience Timeline
-  renderExperience();
-
   // Render Services
   renderServices();
 
@@ -335,33 +332,6 @@ function renderSkills() {
             </div>
           </div>
         `).join('')}
-      </div>
-    </div>
-  `).join('');
-}
-
-/* --- Render Experience --- */
-function renderExperience() {
-  const container = document.getElementById('experience-timeline');
-  if (!container || !portfolioData.experience) return;
-
-  container.innerHTML = portfolioData.experience.map(exp => `
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-card glass-card">
-        <div class="timeline-card-header">
-          <div>
-            <h3 class="timeline-role">${exp.role}</h3>
-            <span class="timeline-company">${exp.company} &bull; ${exp.location}</span>
-          </div>
-          <div class="timeline-meta">
-            <span class="timeline-period">${exp.period}</span>
-            <span class="timeline-badge">${exp.badge}</span>
-          </div>
-        </div>
-        <ul class="timeline-highlights">
-          ${exp.highlights.map(h => `<li>${h}</li>`).join('')}
-        </ul>
       </div>
     </div>
   `).join('');

@@ -186,33 +186,6 @@ I enjoy building real-world projects, learning modern technologies, and continuo
     }
   ],
 
-  experience: [
-    {
-      role: "Full-Stack Developer (Freelance)",
-      company: "Self-Employed",
-      period: "2024 – Present",
-      location: "Lahore, Pakistan",
-      badge: "Active",
-      highlights: [
-        "Built and deployed MeterPro — a Flutter-based electricity meter and bill management app with Firebase.",
-        "Built and deployed a Personal Expense Tracker with Flask, MongoDB, and server-rendered HTML/CSS/JS.",
-        "Currently developing EduSphere, a multi-school SaaS management system using React, NestJS, and PostgreSQL."
-      ]
-    },
-    {
-      role: "Software Engineering (Academic & Practical Foundation)",
-      company: "Software Engineering Studies",
-      period: "2025 – 2029",
-      location: "Lahore, Pakistan",
-      badge: "In Progress",
-      highlights: [
-        "Core Software Engineering principles, software architecture, and system design.",
-        "Building practical full-stack projects alongside coursework.",
-        "Specializing in full-stack web development, databases, APIs, and modern JavaScript/TypeScript ecosystem."
-      ]
-    }
-  ],
-
   services: [
     {
       icon: "code",
