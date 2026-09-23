@@ -428,6 +428,7 @@ function setupProjectsFilter() {
       btn.classList.add('active');
       const cat = btn.getAttribute('data-filter');
       renderProjects(cat);
+      initScrollReveal();
     });
   });
 }
@@ -514,9 +515,11 @@ function setupProjectModal() {
 }
 
 /* ==========================================================================
-   6. Scroll Observers (Counters & Skill Progress Bars)
+   6. Scroll Observers (Reveal Animations, Progress Bar & Observers)
    ========================================================================== */
 function initScrollObservers() {
+  initScrollReveal();
+
   // Number counters
   const counters = document.querySelectorAll('.counter');
   let countersAnimated = false;
@@ -545,33 +548,85 @@ function initScrollObservers() {
 
   const heroStats = document.querySelector('.hero-stats');
   if (heroStats) counterObserver.observe(heroStats);
+}
 
-  // Skill Bars Observer
-  const skillsGrid = document.getElementById('skills-grid-container');
-  if (skillsGrid) {
-    const skillsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fills = document.querySelectorAll('.skill-progress-fill');
-          fills.forEach(f => {
-            const width = f.getAttribute('data-progress');
-            f.style.width = `${width}%`;
-          });
-          skillsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
+function initScrollReveal() {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
+  });
 
-    skillsObserver.observe(skillsGrid);
+  // Section headers
+  document.querySelectorAll('.section-header').forEach(el => {
+    if (!el.classList.contains('reveal')) {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    }
+  });
+
+  // About section
+  const aboutCard = document.querySelector('.about-card-visual');
+  const aboutTabs = document.querySelector('.about-tabs-container');
+  if (aboutCard && !aboutCard.classList.contains('reveal-left')) {
+    aboutCard.classList.add('reveal-left');
+    revealObserver.observe(aboutCard);
+  }
+  if (aboutTabs && !aboutTabs.classList.contains('reveal-right')) {
+    aboutTabs.classList.add('reveal-right');
+    revealObserver.observe(aboutTabs);
+  }
+
+  // Service cards with staggered delays
+  document.querySelectorAll('.service-card').forEach((el, i) => {
+    if (!el.classList.contains('reveal-scale')) {
+      el.classList.add('reveal-scale');
+      el.style.transitionDelay = `${(i % 2) * 0.12}s`;
+      revealObserver.observe(el);
+    }
+  });
+
+  // Project cards with staggered delays
+  document.querySelectorAll('.project-card').forEach((el, i) => {
+    el.classList.add('reveal-scale');
+    el.style.transitionDelay = `${(i % 3) * 0.12}s`;
+    revealObserver.observe(el);
+  });
+
+  // How I Work process cards
+  document.querySelectorAll('.how-i-work-card').forEach((el, i) => {
+    if (!el.classList.contains('reveal-scale')) {
+      el.classList.add('reveal-scale');
+      el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+      revealObserver.observe(el);
+    }
+  });
+
+  // Contact panel & Form card
+  const contactPanel = document.querySelector('.contact-info-panel');
+  const contactForm = document.querySelector('.contact-form-card');
+  if (contactPanel && !contactPanel.classList.contains('reveal-left')) {
+    contactPanel.classList.add('reveal-left');
+    revealObserver.observe(contactPanel);
+  }
+  if (contactForm && !contactForm.classList.contains('reveal-right')) {
+    contactForm.classList.add('reveal-right');
+    revealObserver.observe(contactForm);
   }
 }
 
 /* ==========================================================================
-   7. Navbar & Scroll Spy
+   7. Navbar & Scroll Spy & Progress Bar
    ========================================================================== */
 function initNavbarAndScroll() {
   const header = document.getElementById('site-header');
   const scrollTopBtn = document.getElementById('scroll-top-btn');
+  const scrollProgressBar = document.getElementById('scroll-progress-bar');
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -594,6 +649,14 @@ function initNavbarAndScroll() {
   // Scroll events
   window.addEventListener('scroll', () => {
     const scrollPos = window.scrollY;
+
+    // Top glowing scroll progress bar
+    if (scrollProgressBar) {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      scrollProgressBar.style.width = scrolled + '%';
+    }
 
     // Header glass background
     if (header) {
