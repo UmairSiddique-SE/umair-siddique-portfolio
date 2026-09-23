@@ -6,7 +6,6 @@
 </p>
 
 <p align="center">
-  <a href="https://stupid-worlds-deny.loca.lt/">🌐 Live Portfolio</a> ·
   <a href="https://github.com/UmairSiddique-SE">GitHub</a> ·
   <a href="https://www.linkedin.com/in/umair-siddique-6029bb375/">LinkedIn</a> ·
   <a href="https://www.upwork.com/freelancers/~019ece93023d118804">Upwork</a>
@@ -85,12 +84,6 @@ A multi-school SaaS school management system currently under active development.
 **Technology:** React, TypeScript, Vite, React Router, Tailwind CSS, Framer Motion, Node.js, NestJS, PostgreSQL, Prisma, JWT
 
 [View Repository](https://github.com/UmairSiddique-SE/School-Project)
-
-## Portfolio
-
-The portfolio website showcases my projects, technical skills, and professional profile.
-
-🌐 https://stupid-worlds-deny.loca.lt/
 
 ## Contact
 
