@@ -659,49 +659,54 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-card-wrapper {
   position: relative;
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .floating-badge {
   position: absolute;
-  background: var(--bg-card);
+  background: rgba(18, 21, 34, 0.9);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
-  padding: 0.65rem 1.1rem;
+  padding: 0.6rem 1.15rem;
   border-radius: var(--radius-md);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  box-shadow: var(--shadow-md);
-  z-index: 2;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  z-index: 5;
+  white-space: nowrap;
   animation: float 4s ease-in-out infinite alternate;
 }
 
 .badge-top {
-  top: -16px;
-  right: -16px;
+  top: -14px;
+  right: 24px;
   animation-delay: 0s;
 }
 
 .badge-bottom {
-  bottom: -16px;
-  left: -16px;
+  bottom: -14px;
+  left: 24px;
   animation-delay: 2s;
 }
 
 .floating-badge i {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--accent-primary);
 }
 
 .floating-badge span {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
 }
 
 /* Terminal Card */
@@ -2007,6 +2012,26 @@ h1, h2, h3, h4, h5, h6 {
   }
   .form-group-row {
     grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    margin-top: 1.5rem;
+  }
+  .floating-badge {
+    padding: 0.45rem 0.85rem;
+  }
+  .floating-badge span {
+    font-size: 0.78rem;
+  }
+  .floating-badge i {
+    font-size: 0.95rem;
+  }
+  .badge-top {
+    top: -10px;
+    right: 12px;
+  }
+  .badge-bottom {
+    bottom: -10px;
+    left: 12px;
   }
 }
 
