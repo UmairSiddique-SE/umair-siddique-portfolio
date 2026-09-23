@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Interactive Script for Umair Siddique's Portfolio
  * Features:
  * - Ambient Particle Canvas with Mouse Interactivity & Theme Sync
@@ -837,7 +837,7 @@ function showToast(message, iconName = 'bell') {
   const toast = document.createElement('div');
   toast.className = 'toast';
 
-  // Use safe DOM construction â€” never put message string into innerHTML
+  // Use safe DOM construction — never put message string into innerHTML
   const icon = document.createElement('i');
   icon.className = `fa-solid fa-${iconName}`;
 
