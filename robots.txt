@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://umairsiddique-se.github.io/sitemap.xml
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://umair-siddique.vercel.app/sitemap.xml
+
