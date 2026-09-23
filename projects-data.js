@@ -44,7 +44,7 @@ I enjoy building real-world projects, learning modern technologies, and continuo
             degree: "BS in Software Engineering",
             institution: "University of Engineering and Technology (UET), Lahore",
             year: "2025 – 2029",
-            honors: "Undergraduate • BS Software Engineering"
+            honors: "Undergraduate | BS Software Engineering"
           }
         ]
       },

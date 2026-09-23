@@ -352,7 +352,7 @@ function renderExperience() {
         <div class="timeline-card-header">
           <div>
             <h3 class="timeline-role">${exp.role}</h3>
-            <span class="timeline-company">${exp.company} • ${exp.location}</span>
+            <span class="timeline-company">${exp.company} &bull; ${exp.location}</span>
           </div>
           <div class="timeline-meta">
             <span class="timeline-period">${exp.period}</span>
