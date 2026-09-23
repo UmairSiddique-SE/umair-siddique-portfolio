@@ -168,8 +168,8 @@ body {
 /* Scroll Reveal Animations */
 .reveal {
   opacity: 0;
-  transform: translateY(35px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(40px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -178,22 +178,10 @@ body {
   transform: translateY(0);
 }
 
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.93) translateY(25px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-scale.active {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-}
-
 .reveal-left {
   opacity: 0;
-  transform: translateX(-35px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-70px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -204,14 +192,38 @@ body {
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(35px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(70px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal-right.active {
   opacity: 1;
   transform: translateX(0);
+}
+
+.reveal-bottom {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-bottom.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9) translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 
 /* Background Canvas & Mesh */
@@ -1819,8 +1831,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #submit-form-btn {
-  width: 100%;
-  padding: 0.85rem;
+  width: auto;
+  align-self: flex-end;
+  padding: 0.85rem 1.85rem;
   font-size: 0.95rem;
   margin-top: 0.2rem;
 }
