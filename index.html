@@ -430,22 +430,22 @@
               <div class="form-group-row">
                 <div class="form-group">
                   <label for="form-name">Your Name *</label>
-                  <input type="text" id="form-name" class="form-input" placeholder="e.g. John Doe" required>
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. John Doe" autocomplete="name" required>
                 </div>
                 <div class="form-group">
                   <label for="form-email">Your Email *</label>
-                  <input type="email" id="form-email" class="form-input" placeholder="e.g. john@example.com" required>
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. john@example.com" autocomplete="email" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="form-subject">Subject *</label>
-                <input type="text" id="form-subject" class="form-input" placeholder="e.g. Full-Stack Contract Opportunity" required>
+                <input type="text" id="form-subject" name="subject" class="form-input" placeholder="e.g. Full-Stack Contract Opportunity" required>
               </div>
 
               <div class="form-group">
                 <label for="form-message">Message *</label>
-                <textarea id="form-message" class="form-textarea" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
+                <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary" id="submit-form-btn">

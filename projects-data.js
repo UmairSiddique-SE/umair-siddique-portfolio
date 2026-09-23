@@ -13,7 +13,9 @@ const portfolioData = {
     github: "https://github.com/UmairSiddique-SE",
     linkedin: "https://www.linkedin.com/in/umair-siddique-6029bb375",
     upwork: "https://www.upwork.com/freelancers/~019ece93023d118804",
-    whatsapp: "https://wa.me/923016767262"
+    whatsapp: "https://wa.me/923016767262",
+    web3FormsAccessKey: "0709cad2-ca0d-49cf-b557-544fd38174b4", // Web3Forms Access Key for direct email delivery
+    formspreeUrl: ""        // Optional: Paste your Formspree endpoint URL
   },
 
   about: {

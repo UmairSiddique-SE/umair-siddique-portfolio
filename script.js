@@ -746,23 +746,83 @@ function initContactAndTools() {
     });
   }
 
-  // Contact Form Submit Handler
+  // Contact Form Submit Handler (Real Submissions)
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = document.getElementById('submit-form-btn');
       const origText = submitBtn.innerHTML;
 
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending Message...</span>`;
+      const name = document.getElementById('form-name').value.trim();
+      const email = document.getElementById('form-email').value.trim();
+      const subject = document.getElementById('form-subject').value.trim();
+      const message = document.getElementById('form-message').value.trim();
 
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>`;
+
+      // Check if Formspree or Web3Forms is configured
+      const formspreeUrl = portfolioData.developer.formspreeUrl;
+      const web3Key = portfolioData.developer.web3FormsAccessKey;
+
+      if (formspreeUrl) {
+        try {
+          const res = await fetch(formspreeUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ name, email, subject, message })
+          });
+          if (res.ok) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = origText;
+            contactForm.reset();
+            showToast('Message sent successfully! I will get back to you soon.', 'paper-plane');
+            return;
+          }
+        } catch (err) {
+          console.error('Formspree error:', err);
+        }
+      } else if (web3Key) {
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              access_key: web3Key,
+              name: name,
+              email: email,
+              from_name: name,
+              subject: `Portfolio Message from ${name}: ${subject}`,
+              message: message
+            })
+          });
+          const data = await res.json();
+          if (data.success) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = origText;
+            contactForm.reset();
+            showToast('Message sent successfully! I will get back to you within 24 hours.', 'check');
+            return;
+          } else {
+            console.warn('Web3Forms response:', data);
+          }
+        } catch (err) {
+          console.error('Web3Forms error:', err);
+        }
+      }
+
+      // Direct fallback: opens email client pre-filled with visitor's message
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = origText;
         contactForm.reset();
-        showToast('Message sent successfully! I will get back to you within 24 hours.', 'paper-plane');
-      }, 1200);
+        
+        const mailtoUrl = `mailto:${portfolioData.developer.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        window.location.href = mailtoUrl;
+
+        showToast('Opening your email app to send message to Umair...', 'envelope');
+      }, 500);
     });
   }
 
