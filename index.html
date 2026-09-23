@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="violet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umair Siddique | Software Engineer & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Umair Siddique, Software Engineer & Full-Stack Developer specializing in modern web applications, reliable backend systems, and responsive UI design.">
+  <meta name="keywords" content="Umair Siddique, Software Engineer, Full Stack Developer, React, TypeScript, Node.js, Python, Web Developer, Pakistan, Lahore">
+  <meta name="author" content="Umair Siddique">
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:title" content="Umair Siddique | Software Engineer & Full-Stack Developer">
+  <meta property="og:description" content="Software Engineer & Full-Stack Developer crafting reliable systems and modern web applications.">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238b5cf6'/%3E%3Ctext y='72' font-size='52' x='50%25' text-anchor='middle' font-family='sans-serif' font-weight='bold' fill='white'%3EUS%3C/text%3E%3C/svg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238b5cf6'/%3E%3Ctext y='72' font-size='52' x='50%25' text-anchor='middle' font-family='sans-serif' font-weight='bold' fill='white'%3EUS%3C/text%3E%3C/svg%3E">
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Umair Siddique","jobTitle":"Software Engineer & Full-Stack Developer","email":"umairsiddiquese@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Lahore","addressCountry":"PK"},"sameAs":["https://github.com/UmairSiddique-SE","https://www.linkedin.com/in/umair-siddique-6029bb375","https://www.upwork.com/freelancers/~019ece93023d118804"]}
+  </script>
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" id="brand-logo">
+        <div class="logo-badge">US</div>
+        <span>UMAIR <span class="gradient-text">SIDDIQUE</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Accent Switcher -->
+        <div class="theme-picker">
+          <button class="theme-btn" id="theme-toggle-btn" aria-label="Toggle Theme Palette">
+            <div class="theme-swatch" id="current-theme-swatch"></div>
+            <i class="fa-solid fa-palette"></i>
+          </button>
+          <div class="theme-menu" id="theme-dropdown-menu">
+            <button class="theme-option active" data-set-theme="violet">
+              <span class="theme-swatch swatch-violet"></span> Neon Violet
+            </button>
+            <button class="theme-option" data-set-theme="cyan">
+              <span class="theme-swatch swatch-cyan"></span> Cyber Cyan
+            </button>
+            <button class="theme-option" data-set-theme="emerald">
+              <span class="theme-swatch swatch-emerald"></span> Emerald Glow
+            </button>
+            <button class="theme-option" data-set-theme="amber">
+              <span class="theme-swatch swatch-amber"></span> Sunset Amber
+            </button>
+            <button class="theme-option" data-set-theme="rose">
+              <span class="theme-swatch swatch-rose"></span> Electric Rose
+            </button>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-sm" id="nav-hire-btn">
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            <span id="hero-availability-text">Available for Freelance &amp; Internship Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Building <span class="gradient-text">Modern Software</span> for the Digital World.
+          </h1>
+
+          <div class="hero-subtitle">
+            I am a <span class="typewriter-text" id="typewriter"></span>
+          </div>
+
+          <p class="hero-description">
+            I'm a Software Engineer &amp; Full-Stack Developer focused on building modern web applications, SaaS platforms, APIs, and practical software solutions.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="hero-explore-projects">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Explore My Work</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="hero-contact-btn">
+              <i class="fa-regular fa-paper-plane"></i>
+              <span>Get In Touch</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Code Card -->
+        <div class="hero-visual">
+          <div class="hero-card-wrapper">
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-top">
+              <i class="fa-brands fa-react"></i>
+              <span>React &amp; JavaScript</span>
+            </div>
+
+            <div class="floating-badge badge-bottom">
+              <i class="fa-solid fa-server"></i>
+              <span>Full-Stack &amp; APIs</span>
+            </div>
+
+            <!-- Interactive Terminal Card -->
+            <div class="terminal-card">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <div class="terminal-dot dot-red"></div>
+                  <div class="terminal-dot dot-yellow"></div>
+                  <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-title">umair-developer.ts</div>
+                <button class="terminal-copy-btn" id="terminal-copy-btn" title="Copy Code">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <div class="terminal-body">
+                <pre><code><span class="code-keyword">const</span> <span class="code-var">engineer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">'Umair Siddique'</span>,
+  <span class="code-prop">role</span>: <span class="code-string">'Software Engineer & Full-Stack Developer'</span>,
+  <span class="code-prop">location</span>: <span class="code-string">'Lahore, Pakistan'</span>,
+  <span class="code-prop">coreStack</span>: [<span class="code-string">'React'</span>, <span class="code-string">'JavaScript'</span>, <span class="code-string">'Node.js'</span>, <span class="code-string">'Python'</span>, <span class="code-string">'PostgreSQL'</span>],
+  <span class="code-prop">focus</span>: <span class="code-string">'Full-stack web applications & modern UI'</span>,
+  <span class="code-prop">status</span>: <span class="code-string">'🟢 Open for contract & internship roles'</span>
+};
+
+<span class="code-comment">// Building high-impact digital experiences</span>
+<span class="code-var">console</span>.log(<span class="code-string">'Building software that solves real problems.'</span>);</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-user"></i> About Me</div>
+          <h2 class="section-title">Software Engineer. <span class="gradient-text">Full-Stack</span> Developer.</h2>
+          <p class="section-desc">Get to know my journey, academic foundations, certifications, and the technologies I work with every day.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Profile Card -->
+          <div class="about-card-visual glass-card">
+            <div class="avatar-container">
+              <div class="avatar-inner">
+                <img src="assets/profile.jpg" alt="Umair Siddique - Software Engineer & Full-Stack Developer" class="profile-photo-img">
+              </div>
+            </div>
+            <h3 class="about-name">Umair Siddique</h3>
+            <p class="about-role">Software Engineer & Full-Stack Developer</p>
+
+            <div class="about-quick-info">
+              <div class="quick-info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Lahore, Pakistan (Remote Friendly)</span>
+              </div>
+              <div class="quick-info-row">
+                <i class="fa-solid fa-envelope"></i>
+                <span>umairsiddiquese@gmail.com</span>
+              </div>
+              <div class="quick-info-row">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Software Engineer &amp; Full-Stack Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Tabs -->
+          <div class="about-tabs-container">
+            <div class="tabs-nav" id="about-tabs-nav">
+              <button class="tab-btn active" data-tab="story">My Story</button>
+              <button class="tab-btn" data-tab="education">Education</button>
+              <button class="tab-btn" data-tab="certifications">Certifications</button>
+              <button class="tab-btn" data-tab="workflow">Tools & Workflow</button>
+            </div>
+
+            <!-- Tab 1: Story -->
+            <div class="tab-content active" id="tab-story">
+              <p class="tab-story-text">
+                I'm Umair Siddique, a Software Engineer and Full-Stack Developer focused on building modern web applications and software solutions. I work across frontend, backend, databases, and APIs to turn ideas into functional, reliable products.
+              </p>
+              <p class="tab-story-text">
+                I enjoy building real-world projects, exploring modern technologies, and continuously improving my software engineering skills through hands-on development.
+              </p>
+            </div>
+
+            <!-- Tab 2: Education -->
+            <div class="tab-content" id="tab-education">
+              <div class="tab-items-list" id="education-list">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Tab 3: Certifications -->
+            <div class="tab-content" id="tab-certifications">
+              <div class="tab-items-list" id="certifications-list">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Tab 4: Tools -->
+            <div class="tab-content" id="tab-workflow">
+              <div class="tools-grid" id="tools-list">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-code"></i> Expertise</div>
+          <h2 class="section-title">Technical Mastery & <span class="gradient-text">Skillset</span></h2>
+          <p class="section-desc">The technologies, tools, and platforms I work with to build modern web applications and software solutions.</p>
+        </div>
+
+        <div class="skills-grid" id="skills-grid-container">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-timeline"></i> My Journey</div>
+          <h2 class="section-title">Experience & <span class="gradient-text">Milestones</span></h2>
+          <p class="section-desc">A timeline of my development work, real projects built, and my ongoing growth as a Software Engineer.</p>
+        </div>
+
+        <div class="timeline" id="experience-timeline">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> What I Offer</div>
+          <h2 class="section-title">Services & <span class="gradient-text">Capabilities</span></h2>
+          <p class="section-desc">Practical software development services based on real skills and experience.</p>
+        </div>
+
+        <div class="services-grid" id="services-grid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Gallery Section -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-rocket"></i> My Projects</div>
+          <h2 class="section-title">Featured <span class="gradient-text">Work & Creations</span></h2>
+          <p class="section-desc">A selection of real web applications I have built and deployed.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="frontend">Frontend & UI</button>
+          <button class="filter-btn" data-filter="uiux">UI/UX & Collab</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid-container">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- How I Work Section -->
+    <section class="testimonials" id="how-i-work">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-gears"></i> My Process</div>
+          <h2 class="section-title">How I <span class="gradient-text">Work</span></h2>
+          <p class="section-desc">My development process &#8212; from understanding your requirements to delivering a polished, working product.</p>
+        </div>
+
+        <div class="how-i-work-grid" id="how-i-work-grid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-paper-plane"></i> Get In Touch</div>
+          <h2 class="section-title">Have a Project <span class="gradient-text">in Mind?</span></h2>
+          <p class="section-desc">Let's build something useful, modern and reliable. I'm available for freelance projects and internship opportunities.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Column -->
+          <div class="contact-info-panel">
+            <div class="contact-info-card">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-card-text">
+                <h4>Email Address</h4>
+                <a href="mailto:umairsiddiquese@gmail.com" id="contact-email-link">umairsiddiquese@gmail.com</a>
+                <br>
+                <button class="copy-email-btn" id="copy-email-btn">
+                  <i class="fa-regular fa-copy"></i>
+                  <span>Copy to Clipboard</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="contact-card-text">
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/923016767262" target="_blank" rel="noopener" class="whatsapp-chat-btn" id="contact-whatsapp-link">
+                  <span>Chat on WhatsApp</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-card-text">
+                <h4>Location</h4>
+                <p>Lahore, Pakistan (PKT / UTC+5)</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-box"><i class="fa-solid fa-bolt"></i></div>
+              <div class="contact-card-text">
+                <h4>Response Time</h4>
+                <p>Within 24 hours</p>
+              </div>
+            </div>
+
+            <!-- Live Local Time Widget -->
+            <div class="local-time-card">
+              <div>
+                <div class="local-time-label">My Current Local Time (PKT)</div>
+                <div class="local-time-value" id="current-local-time">--:--:-- PM</div>
+              </div>
+              <div class="status-dot"></div>
+            </div>
+
+            <!-- Contact Social Links -->
+            <div class="contact-social-row">
+              <a href="https://github.com/UmairSiddique-SE" target="_blank" rel="noopener" class="btn-icon" aria-label="GitHub Profile" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/umair-siddique-6029bb375" target="_blank" rel="noopener" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.upwork.com/freelancers/~019ece93023d118804" target="_blank" rel="noopener" class="btn-icon" aria-label="Upwork Profile" title="Upwork">
+                <i class="fa-brands fa-upwork"></i>
+              </a>
+              <a href="https://wa.me/923016767262" target="_blank" rel="noopener" class="btn-icon btn-whatsapp" aria-label="WhatsApp" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card glass-card">
+            <form class="contact-form" id="contact-form">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="form-name">Your Name *</label>
+                  <input type="text" id="form-name" class="form-input" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="form-email">Your Email *</label>
+                  <input type="email" id="form-email" class="form-input" placeholder="e.g. john@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Subject *</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="e.g. Full-Stack Contract Opportunity" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message *</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submit-form-btn">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Details Modal Backdrop -->
+  <div class="modal-backdrop" id="project-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container" id="project-modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header-banner" id="modal-banner">
+        <div class="project-banner-overlay"></div>
+        <i class="fa-solid fa-code project-icon-large" id="modal-icon"></i>
+      </div>
+
+      <div class="modal-body">
+        <h3 class="modal-title" id="modal-title"></h3>
+        <p class="modal-tagline" id="modal-tagline"></p>
+
+        <div class="modal-stats-row" id="modal-stats-container"></div>
+
+        <p class="modal-description" id="modal-desc"></p>
+
+        <h4 class="modal-section-title">Key Highlights:</h4>
+        <ul class="modal-highlights" id="modal-highlights-list"></ul>
+
+        <h4 class="modal-section-title">Tech Stack:</h4>
+        <div class="project-tech-pills" id="modal-tech-pills"></div>
+
+        <div class="modal-actions" style="margin-top: 2rem;">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-live-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Live Demo</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="modal-github-link">
+            <i class="fa-brands fa-github"></i>
+            <span>Source Code</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <div class="logo-badge">US</div>
+            <span>UMAIR <span class="gradient-text">SIDDIQUE</span></span>
+          </a>
+          <p class="footer-desc">
+            Software Engineer & Full-Stack Developer dedicated to building responsive, accessible, and reliable digital solutions.
+          </p>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com/UmairSiddique-SE" target="_blank" rel="noopener" class="btn-icon" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/umair-siddique-6029bb375" target="_blank" rel="noopener" class="btn-icon" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.upwork.com/freelancers/~019ece93023d118804" target="_blank" rel="noopener" class="btn-icon" aria-label="Upwork Profile">
+            <i class="fa-brands fa-upwork"></i>
+          </a>
+          <a href="https://wa.me/923016767262" target="_blank" rel="noopener" class="btn-icon" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="mailto:umairsiddiquese@gmail.com" class="btn-icon" aria-label="Send Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> Umair Siddique. Designed & Built with Precision.</p>
+        <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top of page">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="projects-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+

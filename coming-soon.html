@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | Umair Siddique</title>
+  <meta name="description" content="This project is currently under development. Stay tuned for updates!">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238b5cf6'/%3E%3Ctext y='72' font-size='52' x='50%25' text-anchor='middle' font-family='sans-serif' font-weight='bold' fill='white'%3EUS%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #090a10;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animated gradient background */
+    .bg-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(139,92,246,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 80%, rgba(6,182,212,0.12) 0%, transparent 60%);
+      animation: bgPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgPulse {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(139, 92, 246, 0.5);
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #f8fafc;
+      margin-bottom: 2.5rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Animated icon */
+    .icon-container {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(139, 92, 246, 0.08);
+      border: 2px solid rgba(139, 92, 246, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      animation: iconPulse 3s ease-in-out infinite;
+    }
+
+    .icon-container i {
+      font-size: 3rem;
+      background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes iconPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.3); }
+      50% { transform: scale(1.05); box-shadow: 0 0 40px 10px rgba(139, 92, 246, 0.15); }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f59e0b;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .project-name {
+      display: block;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: #94a3b8;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    .description {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      color: white;
+      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Progress bar animation */
+    .progress-section {
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+      width: 0%;
+      animation: progressGrow 2s ease-out 0.5s forwards;
+    }
+
+    @keyframes progressGrow {
+      to { width: 45%; }
+    }
+
+    @media (max-width: 480px) {
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-gradient"></div>
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="content">
+    <a href="index.html" class="logo-link">
+      <div class="logo-badge">US</div>
+      <span>UMAIR <span class="gradient-text">SIDDIQUE</span></span>
+    </a>
+
+    <div class="icon-container">
+      <i class="fa-solid fa-rocket"></i>
+    </div>
+
+    <div class="badge">Under Development</div>
+
+    <h1>
+      Coming <span class="gradient-text">Soon</span>
+      <span class="project-name" id="project-name"></span>
+    </h1>
+
+    <p class="description">
+      This project is currently under active development. I'm building something great and it will be live soon. Stay tuned for updates!
+    </p>
+
+    <div class="actions">
+      <a href="index.html#projects" class="btn btn-primary">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Portfolio
+      </a>
+      <a href="https://github.com/UmairSiddique-SE" target="_blank" rel="noopener" class="btn btn-secondary">
+        <i class="fa-brands fa-github"></i>
+        View on GitHub
+      </a>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>Development Progress</span>
+        <span>In Progress</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Read project name from URL
+    const params = new URLSearchParams(window.location.search);
+    const projectName = params.get('project');
+    const nameEl = document.getElementById('project-name');
+    if (projectName && nameEl) {
+      nameEl.textContent = projectName;
+      document.title = `${projectName} — Coming Soon | Umair Siddique`;
+    }
+
+    // Generate floating particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 25; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDuration = (8 + Math.random() * 12) + 's';
+      particle.style.animationDelay = (Math.random() * 8) + 's';
+      particle.style.width = particle.style.height = (2 + Math.random() * 4) + 'px';
+      particle.style.background = Math.random() > 0.5
+        ? 'rgba(139, 92, 246, 0.4)'
+        : 'rgba(6, 182, 212, 0.4)';
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
