@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://umairsiddique-se.github.io/sitemap.xml
