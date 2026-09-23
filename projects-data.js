@@ -42,9 +42,9 @@ I enjoy building real-world projects, learning modern technologies, and continuo
         items: [
           {
             degree: "BS in Software Engineering",
-            institution: "University Level Education",
+            institution: "Lahore, Pakistan",
             year: "2025 – 2029",
-            honors: "Undergraduate Degree • BS Software Engineering"
+            honors: "Undergraduate • BS Software Engineering"
           }
         ]
       },
@@ -107,15 +107,15 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       id: "meterpro-official",
       title: "MeterPro – Utility Bill Manager",
       category: "fullstack",
-      categoryLabel: "Live Web App",
+      categoryLabel: "Cross-Platform App",
       status: "live",
       statusLabel: "Live",
       featured: true,
-      tagline: "Smart electricity, gas & water meter tracker with instant unit consumption calculation.",
-      description: "MeterPro is a smart meter reading and utility bill management web application. It lets users record meter readings, track unit consumption over time, estimate utility bills, and manage electricity, gas and water data from a clean, intuitive dashboard.",
-      technologies: ["React", "JavaScript", "Firebase", "Cloud Firestore", "Tailwind CSS"],
+      tagline: "Flutter-based electricity meter and bill management app with Firebase authentication and cloud sync.",
+      description: "MeterPro is a Flutter application for electricity meter and bill management. It features Firebase Authentication with email/password, custom six-digit email OTP verification, Firestore-backed meter data, Google ML Kit and camera capabilities, and Firebase Cloud Functions for server-side OTP handling.",
+      technologies: ["Dart", "Flutter", "Firebase", "Cloud Firestore", "Firebase Cloud Functions"],
       stats: {
-        platform: "Web App",
+        platform: "Mobile / Web App",
         hosting: "Firebase Hosting",
         status: "Live Production"
       },
@@ -124,10 +124,10 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       liveUrl: "https://meterpro-official.web.app/",
       githubUrl: "https://github.com/UmairSiddique-SE/MeterPro",
       highlights: [
-        "Smart meter reading logger for electricity, gas, and water utilities",
-        "Automated unit consumption calculation per billing cycle",
-        "Real-time data sync with Firebase Cloud Firestore",
-        "Fully responsive, mobile-friendly utility dashboard"
+        "Firebase Authentication with custom six-digit email OTP verification",
+        "Firestore-backed meter data with real-time cloud sync",
+        "Google ML Kit and camera capabilities for meter reading",
+        "Firebase Cloud Functions for server-side OTP handling"
       ]
     },
     {
@@ -138,9 +138,9 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       status: "live",
       statusLabel: "Live",
       featured: true,
-      tagline: "Full-stack personal finance app to track daily expenses and manage savings.",
-      description: "A full-stack personal finance application built with React, Python, Flask, and MongoDB. Helps users log daily expenses, view spending by category, and track budget goals. Features a clean dashboard with visual summaries and a secure backend API.",
-      technologies: ["React", "Python", "Flask", "MongoDB", "Jinja2", "Vercel"],
+      tagline: "Production-focused personal finance tracker with analytics, PDF statements, and secure authentication.",
+      description: "A production-focused personal finance tracker built with Flask, MongoDB, and server-rendered HTML/CSS/JavaScript. Features income and expense management, overall/weekly/monthly/daily and custom-range analytics, category breakdowns, six-month trend charts, PDF financial statements, secure password hashing, and PWA support.",
+      technologies: ["Python", "Flask", "MongoDB", "HTML/CSS/JS", "ReportLab", "Vercel"],
       stats: {
         platform: "Web App",
         hosting: "Vercel",
@@ -151,23 +151,23 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       liveUrl: "https://personal-expensive-tracker.vercel.app/",
       githubUrl: "https://github.com/UmairSiddique-SE/PersonaL-Expense-Tracker",
       highlights: [
-        "Daily expense logging with category-based organization",
-        "Visual spending summaries for budget awareness",
-        "Full-stack: React frontend + Python/Flask backend + MongoDB",
-        "Deployed and live on Vercel"
+        "Income and expense tracking with category-based analytics",
+        "PDF financial statements and six-month dashboard trend charts",
+        "Secure authentication with password hashing and account recovery",
+        "PWA support — deployed and live on Vercel"
       ]
     },
     {
       id: "edusphere",
-      title: "EduSphere – Learning Management Platform",
+      title: "EduSphere – Multi-School Management SaaS",
       category: "fullstack",
       categoryLabel: "Full-Stack Web App",
       status: "inprogress",
       statusLabel: "In Progress",
       featured: true,
-      tagline: "A modern learning management system currently under active development.",
-      description: "EduSphere is a full-stack Learning Management System (LMS) currently under development. It is designed to support course creation, student enrollment, progress tracking, and content delivery for educators and learners.",
-      technologies: ["React", "Node.js", "NestJS", "PostgreSQL", "Prisma", "TypeScript"],
+      tagline: "A multi-school SaaS school management system with administration, academics, finance, and subscription management.",
+      description: "EduSphere is a multi-school school management platform currently under active development. It brings school administration, academics, communication, finance, and subscription management into one system — with role-based access control, attendance, fees, exams, timetable, and super-admin onboarding workflows.",
+      technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Tailwind CSS"],
       stats: {
         platform: "Web App",
         stage: "In Development",
@@ -178,9 +178,9 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       liveUrl: null,
       githubUrl: "https://github.com/UmairSiddique-SE/School-Project",
       highlights: [
-        "Course creation and management system for educators",
-        "Student enrollment and progress tracking",
-        "Built with React, NestJS, PostgreSQL and Prisma ORM",
+        "Multi-school administration with role-based access control",
+        "Modules for attendance, fees, exams, timetable, library, and transport",
+        "Subscription and plan management with super-admin onboarding",
         "Currently under active development — not yet released"
       ]
     }
@@ -194,9 +194,9 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       location: "Lahore, Pakistan",
       badge: "Active",
       highlights: [
-        "Built and deployed MeterPro — a live utility bill management web application using React and Firebase.",
-        "Built and deployed a Personal Expense Tracker with a full-stack React + Python/Flask + MongoDB architecture.",
-        "Currently developing EduSphere, a full-stack Learning Management System using React, NestJS, and PostgreSQL."
+        "Built and deployed MeterPro — a Flutter-based electricity meter and bill management app with Firebase.",
+        "Built and deployed a Personal Expense Tracker with Flask, MongoDB, and server-rendered HTML/CSS/JS.",
+        "Currently developing EduSphere, a multi-school SaaS management system using React, NestJS, and PostgreSQL."
       ]
     },
     {

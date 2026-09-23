@@ -65,21 +65,21 @@ My work spans frontend development, backend APIs, databases, mobile applications
 ## Featured Projects
 
 ### MeterPro
-A utility application for managing electricity meters and checking online bills.
+A Flutter application for electricity meter and bill management, with Firebase-backed authentication, OTP verification, cloud functions, and Firestore-backed meter data.
 
-**Technology:** Dart, Flutter, Firebase, Firestore, Firebase Authentication, Cloud Functions, Google ML Kit, Camera
+**Technology:** Dart, Flutter, Firebase Authentication, Cloud Firestore, Firebase Cloud Functions, Google ML Kit, Camera, Firebase Hosting
 
-[View Repository](https://github.com/UmairSiddique-SE/MeterPro)
+[Live Demo](https://meterpro-official.web.app/) · [View Repository](https://github.com/UmairSiddique-SE/MeterPro)
 
 ### Personal Expense Tracker
-A personal finance tracker with income and expense management, analytics, PDF financial statements, secure authentication, and MongoDB persistence.
+A production-focused personal finance tracker with income and expense management, analytics, PDF financial statements, secure authentication, and MongoDB persistence.
 
 **Technology:** Python, Flask, MongoDB, HTML, CSS, JavaScript, ReportLab, Vercel
 
-[Live Demo](https://persona-l-expense-tracker.vercel.app) · [View Repository](https://github.com/UmairSiddique-SE/PersonaL-Expense-Tracker)
+[Live Demo](https://personal-expensive-tracker.vercel.app/) · [View Repository](https://github.com/UmairSiddique-SE/PersonaL-Expense-Tracker)
 
 ### EduSphere — In Progress
-A multi-school SaaS school management system currently under active development.
+A multi-school SaaS school management system currently under active development. Covers administration, academics, attendance, fees, exams, timetable, transport, library, and subscription management.
 
 **Technology:** React, TypeScript, Vite, React Router, Tailwind CSS, Framer Motion, Node.js, NestJS, PostgreSQL, Prisma, JWT
 
