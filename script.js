@@ -582,29 +582,31 @@ function initScrollReveal() {
     revealObserver.observe(aboutTabs);
   }
 
-  // Service cards with staggered delays
+  // Service cards alternating from left and right
   document.querySelectorAll('.service-card').forEach((el, i) => {
-    if (!el.classList.contains('reveal-scale')) {
-      el.classList.add('reveal-scale');
-      el.style.transitionDelay = `${(i % 2) * 0.12}s`;
-      revealObserver.observe(el);
-    }
-  });
-
-  // Project cards with staggered delays
-  document.querySelectorAll('.project-card').forEach((el, i) => {
-    el.classList.add('reveal-scale');
-    el.style.transitionDelay = `${(i % 3) * 0.12}s`;
+    const animClass = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
+    el.classList.remove('reveal-scale', 'reveal-left', 'reveal-right');
+    el.classList.add(animClass);
+    el.style.transitionDelay = `${(i % 2) * 0.12}s`;
     revealObserver.observe(el);
   });
 
-  // How I Work process cards
+  // Project cards alternating from left and right
+  document.querySelectorAll('.project-card').forEach((el, i) => {
+    const animClass = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
+    el.classList.remove('reveal-scale', 'reveal-left', 'reveal-right');
+    el.classList.add(animClass);
+    el.style.transitionDelay = `${(i % 2) * 0.12}s`;
+    revealObserver.observe(el);
+  });
+
+  // How I Work process cards alternating from left and right
   document.querySelectorAll('.how-i-work-card').forEach((el, i) => {
-    if (!el.classList.contains('reveal-scale')) {
-      el.classList.add('reveal-scale');
-      el.style.transitionDelay = `${(i % 4) * 0.1}s`;
-      revealObserver.observe(el);
-    }
+    const animClass = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
+    el.classList.remove('reveal-scale', 'reveal-left', 'reveal-right');
+    el.classList.add(animClass);
+    el.style.transitionDelay = `${(i % 2) * 0.1}s`;
+    revealObserver.observe(el);
   });
 
   // Contact panel & Form card
