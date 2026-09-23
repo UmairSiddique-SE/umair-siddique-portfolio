@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. Theme Switcher System
+   1. Theme Switcher System & Automatic Color Cycle
    ========================================================================== */
 function initThemeSwitcher() {
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
@@ -33,9 +33,29 @@ function initThemeSwitcher() {
   const themeOptions = document.querySelectorAll('.theme-option');
   const htmlEl = document.documentElement;
 
-  // Load saved theme from localStorage (default: Cyber Cyan)
+  const THEMES = ['cyan', 'violet', 'emerald', 'amber', 'rose'];
   const savedTheme = localStorage.getItem('portfolio_theme') || 'cyan';
-  applyTheme(savedTheme);
+  let currentThemeIndex = THEMES.indexOf(savedTheme) !== -1 ? THEMES.indexOf(savedTheme) : 0;
+
+  applyTheme(THEMES[currentThemeIndex]);
+
+  // Automatic Smooth Color Cycle
+  let autoCycleInterval = null;
+  let userInteractedTimeout = null;
+
+  function startAutoCycle() {
+    stopAutoCycle();
+    autoCycleInterval = setInterval(() => {
+      currentThemeIndex = (currentThemeIndex + 1) % THEMES.length;
+      applyTheme(THEMES[currentThemeIndex]);
+    }, 5000);
+  }
+
+  function stopAutoCycle() {
+    if (autoCycleInterval) clearInterval(autoCycleInterval);
+  }
+
+  startAutoCycle();
 
   if (themeToggleBtn && themeMenu) {
     themeToggleBtn.addEventListener('click', (e) => {
@@ -52,9 +72,16 @@ function initThemeSwitcher() {
     themeOptions.forEach(opt => {
       opt.addEventListener('click', () => {
         const theme = opt.getAttribute('data-set-theme');
+        const themeIdx = THEMES.indexOf(theme);
+        if (themeIdx !== -1) currentThemeIndex = themeIdx;
         applyTheme(theme);
         themeMenu.classList.remove('active');
         showToast(`Theme switched to ${opt.textContent.trim()}!`, 'palette');
+
+        // Pause briefly on user manual selection, then resume
+        stopAutoCycle();
+        if (userInteractedTimeout) clearTimeout(userInteractedTimeout);
+        userInteractedTimeout = setTimeout(startAutoCycle, 12000);
       });
     });
   }

@@ -116,6 +116,22 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   color-scheme: dark;
+  transition: color 1s ease, background-color 1s ease;
+}
+
+.gradient-text,
+.btn-primary,
+.theme-swatch,
+.status-dot,
+.service-icon-box,
+.skill-icon-wrap,
+.skill-progress-fill,
+.project-status-badge,
+.scroll-progress-bar,
+.hiw-icon-box,
+.hiw-step-badge,
+.contact-icon-box {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -2006,16 +2022,43 @@ h1, h2, h3, h4, h5, h6 {
   .hero {
     min-height: auto;
     padding-top: calc(var(--nav-height) + 1.2rem);
-    padding-bottom: 2.2rem;
+    padding-bottom: 2rem;
+  }
+  .hero-badge {
+    font-size: 0.74rem;
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 0.85rem;
+    max-width: 100%;
+    white-space: normal;
   }
   .hero-title {
-    font-size: 1.95rem;
+    font-size: 1.65rem;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+    word-break: break-word;
   }
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    min-height: 1.6rem;
+    margin-bottom: 0.75rem;
   }
   .hero-description {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
+    justify-content: center;
   }
   .hero-stats {
     grid-template-columns: repeat(3, 1fr);
@@ -2107,8 +2150,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
   }
   .terminal-body {
-    font-size: 0.7rem;
-    padding: 1rem;
+    font-size: 0.66rem;
+    padding: 0.85rem;
+    overflow-x: auto;
+  }
+  .terminal-body pre {
+    white-space: pre-wrap;
+    word-break: break-word;
   }
   .terminal-card {
     max-width: 100%;
@@ -2190,22 +2238,31 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0.85rem;
   }
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
   }
   .hero-badge {
-    font-size: 0.72rem;
-    padding: 0.3rem 0.7rem;
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
+    margin-bottom: 0.65rem;
   }
-  .hero-stats {
-    grid-template-columns: 1fr;
+  .hero-subtitle {
+    font-size: 0.88rem;
+    min-height: 1.4rem;
   }
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
+  .hero-description {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 1.1rem;
   }
   .hero-actions .btn {
-    width: 100%;
-    justify-content: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  .terminal-body {
+    font-size: 0.62rem;
+    padding: 0.75rem;
   }
   .section-title {
     font-size: 1.45rem;
