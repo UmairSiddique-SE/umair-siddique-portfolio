@@ -42,7 +42,7 @@ I enjoy building real-world projects, learning modern technologies, and continuo
         items: [
           {
             degree: "BS in Software Engineering",
-            institution: "Lahore, Pakistan",
+            institution: "University of Engineering and Technology (UET), Lahore",
             year: "2025 – 2029",
             honors: "Undergraduate • BS Software Engineering"
           }
