@@ -44,16 +44,8 @@ I enjoy building real-world projects, learning modern technologies, and continuo
             degree: "BS in Software Engineering",
             institution: "University Level Education",
             year: "2025 – 2029",
-            honors: "Undergraduate Degree • Currently Enrolled"
+            honors: "Undergraduate Degree • BS Software Engineering"
           }
-        ]
-      },
-      certifications: {
-        title: "Learning & Courses",
-        items: [
-          { name: "Full-Stack Web Development", issuer: "Self-directed & Online Learning", year: "2024" },
-          { name: "React & Modern JavaScript", issuer: "Hands-on Project Experience", year: "2024" },
-          { name: "Python & Flask Backend Development", issuer: "Project-based Learning", year: "2024" }
         ]
       },
       workflow: {

@@ -33,8 +33,8 @@ function initThemeSwitcher() {
   const themeOptions = document.querySelectorAll('.theme-option');
   const htmlEl = document.documentElement;
 
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem('portfolio_theme') || 'violet';
+  // Load saved theme from localStorage (default: Cyber Cyan)
+  const savedTheme = localStorage.getItem('portfolio_theme') || 'cyan';
   applyTheme(savedTheme);
 
   if (themeToggleBtn && themeMenu) {
@@ -259,7 +259,6 @@ function initDynamicContent() {
 /* --- Render About Tabs --- */
 function renderAboutTabs() {
   const eduList = document.getElementById('education-list');
-  const certList = document.getElementById('certifications-list');
   const toolsList = document.getElementById('tools-list');
 
   // Education
@@ -272,19 +271,6 @@ function renderAboutTabs() {
         </div>
         <div class="tab-item-sub">${item.institution}</div>
         <div class="tab-item-honors"><i class="fa-solid fa-award"></i> ${item.honors}</div>
-      </div>
-    `).join('');
-  }
-
-  // Certifications
-  if (certList && portfolioData.about.tabs.certifications) {
-    certList.innerHTML = portfolioData.about.tabs.certifications.items.map(item => `
-      <div class="tab-item-card">
-        <div class="tab-item-header">
-          <span class="tab-item-title">${item.name}</span>
-          <span class="tab-item-year">${item.year}</span>
-        </div>
-        <div class="tab-item-sub">${item.issuer}</div>
       </div>
     `).join('');
   }
