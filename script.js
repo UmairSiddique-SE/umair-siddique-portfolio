@@ -352,7 +352,7 @@ function renderExperience() {
         <div class="timeline-card-header">
           <div>
             <h3 class="timeline-role">${exp.role}</h3>
-            <span class="timeline-company">${exp.company} â€¢ ${exp.location}</span>
+            <span class="timeline-company">${exp.company} • ${exp.location}</span>
           </div>
           <div class="timeline-meta">
             <span class="timeline-period">${exp.period}</span>
@@ -661,7 +661,7 @@ function initNavbarAndScroll() {
 }
 
 /* ==========================================================================
-   8. How I Work â€” Process Cards
+   8. How I Work — Process Cards
    ========================================================================== */
 function initTestimonialSlider() {
   // Replaced: renders "How I Work" process cards instead of fake testimonials
