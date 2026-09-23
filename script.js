@@ -382,13 +382,8 @@ function renderProjects(filterCategory = 'all') {
   };
 
   container.innerHTML = filtered.map(proj => {
-    const liveLink = proj.liveUrl
-      ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="Live Preview">
-           <i class="fa-solid fa-external-link"></i>
-         </a>`
-      : `<a href="coming-soon.html?project=${encodeURIComponent(proj.title)}" class="btn-icon btn-sm" title="Coming Soon">
-           <i class="fa-solid fa-clock"></i>
-         </a>`;
+    const openUrl = proj.liveUrl || `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
+    const isExternal = Boolean(proj.liveUrl);
 
     return `
     <div class="project-card glass-card" data-project-id="${proj.id}">
@@ -405,13 +400,15 @@ function renderProjects(filterCategory = 'all') {
           ${proj.technologies.slice(0, 4).map(t => `<span class="tech-pill">${t}</span>`).join('')}
         </div>
         <div class="project-footer">
-          <button class="project-details-btn" data-open-modal="${proj.id}">
-            <span>View Details</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
+          <a href="${openUrl}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''} class="btn btn-primary btn-sm project-open-btn">
+            <span>Open Project</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
           <div class="project-links">
-            ${liveLink}
-            <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="GitHub Repo">
+            <button class="btn-icon btn-sm" data-open-modal="${proj.id}" title="View Details" aria-label="View Project Details">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+            <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="GitHub Repo" aria-label="GitHub Repository">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="cyan">
 
 <head>
@@ -39,7 +39,7 @@
   <link rel="shortcut icon" type="image/jpeg" href="assets/profile.jpg">
   <link rel="apple-touch-icon" href="assets/profile.jpg">
 
-  <!-- Google Rich Results & Knowledge Graph Schema.org Structured Data -->
+  <!-- Schema.org Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -128,7 +128,6 @@
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -290,7 +289,7 @@
             <div class="tabs-nav" id="about-tabs-nav">
               <button class="tab-btn active" data-tab="story">My Story</button>
               <button class="tab-btn" data-tab="education">Education</button>
-              <button class="tab-btn" data-tab="workflow">Tools &amp; Workflow</button>
+              <button class="tab-btn" data-tab="workflow">Tools & Workflow</button>
             </div>
 
             <!-- Tab 1: Story -->
@@ -320,22 +319,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge"><i class="fa-solid fa-code"></i> Expertise</div>
-          <h2 class="section-title">Technical Mastery & <span class="gradient-text">Skillset</span></h2>
-          <p class="section-desc">The technologies, tools, and platforms I work with to build modern web applications
-            and software solutions.</p>
-        </div>
-
-        <div class="skills-grid" id="skills-grid-container">
-          <!-- Populated dynamically via script.js -->
         </div>
       </div>
     </section>
@@ -441,23 +424,6 @@
               </div>
             </div>
 
-            <div class="contact-info-card">
-              <div class="contact-icon-box"><i class="fa-solid fa-bolt"></i></div>
-              <div class="contact-card-text">
-                <h4>Response Time</h4>
-                <p>Within 24 hours</p>
-              </div>
-            </div>
-
-            <!-- Live Local Time Widget -->
-            <div class="local-time-card">
-              <div>
-                <div class="local-time-label">My Current Local Time (PKT)</div>
-                <div class="local-time-value" id="current-local-time">--:--:-- PM</div>
-              </div>
-              <div class="status-dot"></div>
-            </div>
-
             <!-- Contact Social Links -->
             <div class="contact-social-row">
               <a href="https://github.com/UmairSiddique-SE" target="_blank" rel="noopener noreferrer" class="btn-icon"
@@ -485,25 +451,25 @@
               <div class="form-group-row">
                 <div class="form-group">
                   <label for="form-name">Your Name *</label>
-                  <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Umair"
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder="ali"
                     autocomplete="name" required>
                 </div>
                 <div class="form-group">
                   <label for="form-email">Your Email *</label>
-                  <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. [EMAIL_ADDRESS]"
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder="email"
                     autocomplete="email" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="form-subject">Subject *</label>
-                <input type="text" id="form-subject" name="subject" class="form-input" placeholder="e.g. Quick "
+                <input type="text" id="form-subject" name="subject" class="form-input" placeholder="quick"
                   required>
               </div>
 
               <div class="form-group">
                 <label for="form-message">Message *</label>
-                <textarea id="form-message" name="message" class="form-textarea" placeholder="Your Message"
+                <textarea id="form-message" name="message" class="form-textarea" placeholder="message"
                   required></textarea>
               </div>
 
