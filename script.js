@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Interactive Script for Umair Siddique's Portfolio
  * Features:
  * - Ambient Particle Canvas with Mouse Interactivity & Theme Sync
@@ -352,7 +352,7 @@ function renderExperience() {
         <div class="timeline-card-header">
           <div>
             <h3 class="timeline-role">${exp.role}</h3>
-            <span class="timeline-company">${exp.company} • ${exp.location}</span>
+            <span class="timeline-company">${exp.company} â€¢ ${exp.location}</span>
           </div>
           <div class="timeline-meta">
             <span class="timeline-period">${exp.period}</span>
@@ -413,7 +413,7 @@ function renderProjects(filterCategory = 'all') {
 
   container.innerHTML = filtered.map(proj => {
     const liveLink = proj.liveUrl
-      ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener" class="btn-icon btn-sm" title="Live Preview">
+      ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="Live Preview">
            <i class="fa-solid fa-external-link"></i>
          </a>`
       : `<a href="coming-soon.html?project=${encodeURIComponent(proj.title)}" class="btn-icon btn-sm" title="Coming Soon">
@@ -441,7 +441,7 @@ function renderProjects(filterCategory = 'all') {
           </button>
           <div class="project-links">
             ${liveLink}
-            <a href="${proj.githubUrl}" target="_blank" rel="noopener" class="btn-icon btn-sm" title="GitHub Repo">
+            <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="GitHub Repo">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
@@ -661,7 +661,7 @@ function initNavbarAndScroll() {
 }
 
 /* ==========================================================================
-   8. How I Work — Process Cards
+   8. How I Work â€” Process Cards
    ========================================================================== */
 function initTestimonialSlider() {
   // Replaced: renders "How I Work" process cards instead of fake testimonials
@@ -740,10 +740,20 @@ function initContactAndTools() {
       const submitBtn = document.getElementById('submit-form-btn');
       const origText = submitBtn.innerHTML;
 
-      const name = document.getElementById('form-name').value.trim();
-      const email = document.getElementById('form-email').value.trim();
-      const subject = document.getElementById('form-subject').value.trim();
-      const message = document.getElementById('form-message').value.trim();
+      // Sanitize: strip HTML tags from user input
+      const sanitize = (str) => str.replace(/<[^>]*>/g, '').trim();
+
+      const name    = sanitize(document.getElementById('form-name').value);
+      const email   = sanitize(document.getElementById('form-email').value);
+      const subject = sanitize(document.getElementById('form-subject').value);
+      const message = sanitize(document.getElementById('form-message').value);
+
+      // Basic validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name || name.length > 100) { showToast('Please enter a valid name (max 100 chars).', 'circle-exclamation'); return; }
+      if (!emailRegex.test(email))     { showToast('Please enter a valid email address.', 'circle-exclamation'); return; }
+      if (!subject || subject.length > 200) { showToast('Please enter a subject (max 200 chars).', 'circle-exclamation'); return; }
+      if (!message || message.length > 5000) { showToast('Message too long (max 5000 characters).', 'circle-exclamation'); return; }
 
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>`;
@@ -826,10 +836,16 @@ function showToast(message, iconName = 'bell') {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `
-    <i class="fa-solid fa-${iconName}"></i>
-    <span>${message}</span>
-  `;
+
+  // Use safe DOM construction â€” never put message string into innerHTML
+  const icon = document.createElement('i');
+  icon.className = `fa-solid fa-${iconName}`;
+
+  const text = document.createElement('span');
+  text.textContent = message; // safe: renders as plain text, not HTML
+
+  toast.appendChild(icon);
+  toast.appendChild(text);
 
   container.appendChild(toast);
 
@@ -840,4 +856,5 @@ function showToast(message, iconName = 'bell') {
     setTimeout(() => toast.remove(), 300);
   }, 4000);
 }
+
 
