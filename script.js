@@ -834,7 +834,7 @@ function initContactAndTools() {
             submitBtn.disabled = false;
             submitBtn.innerHTML = origText;
             contactForm.reset();
-            showToast('Message sent successfully! I will get back to you soon.', 'paper-plane');
+            showToast('Message sent successfully!', 'check');
             return;
           }
         } catch (err) {
@@ -859,7 +859,7 @@ function initContactAndTools() {
             submitBtn.disabled = false;
             submitBtn.innerHTML = origText;
             contactForm.reset();
-            showToast('Message sent successfully! I will get back to you within 24 hours.', 'check');
+            showToast('Message sent successfully!', 'check');
             return;
           } else {
             console.warn('Web3Forms response:', data);
