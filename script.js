@@ -218,8 +218,9 @@ function initTypewriter() {
   const roles = [
     'Software Engineer',
     'Full-Stack Developer',
-    'MERN & Next.js Developer',
-    'Web Application Builder'
+    'Website & Web Developer',
+    'React & Python Developer',
+    'Frontend & Backend Engineer'
   ];
 
   let roleIdx = 0;
@@ -638,15 +639,10 @@ function initScrollReveal() {
     revealObserver.observe(el);
   });
 
-  // Contact panel & Form card
-  const contactPanel = document.querySelector('.contact-info-panel');
+  // Contact Form card reveal
   const contactForm = document.querySelector('.contact-form-card');
-  if (contactPanel && !contactPanel.classList.contains('reveal-left')) {
-    contactPanel.classList.add('reveal-left');
-    revealObserver.observe(contactPanel);
-  }
-  if (contactForm && !contactForm.classList.contains('reveal-right')) {
-    contactForm.classList.add('reveal-right');
+  if (contactForm && !contactForm.classList.contains('reveal-up')) {
+    contactForm.classList.add('reveal-up');
     revealObserver.observe(contactForm);
   }
 }
