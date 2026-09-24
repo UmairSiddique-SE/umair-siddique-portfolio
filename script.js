@@ -114,30 +114,33 @@ function initParticleCanvas() {
   window.addEventListener('resize', () => {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
-  });
+  }, { passive: true });
 
   const particles = [];
-  const particleCount = Math.min(Math.floor(window.innerWidth / 16), 75);
+  const isMobile = window.innerWidth < 768;
+  const particleCount = isMobile ? 22 : Math.min(Math.floor(window.innerWidth / 32), 48);
+  const maxDistance = isMobile ? 85 : 110;
+  const maxDistanceSq = maxDistance * maxDistance;
 
-  const mouse = { x: null, y: null, radius: 140 };
+  const mouse = { x: null, y: null, radius: isMobile ? 90 : 130 };
 
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
-  });
+  }, { passive: true });
 
   window.addEventListener('mouseleave', () => {
     mouse.x = null;
     mouse.y = null;
-  });
+  }, { passive: true });
 
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 2 + 1;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.radius = Math.random() * 1.8 + 1;
     }
 
     update() {
@@ -151,12 +154,13 @@ function initParticleCanvas() {
       if (mouse.x !== null && mouse.y !== null) {
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const distSq = dx * dx + dy * dy;
 
-        if (distance < mouse.radius) {
+        if (distSq < mouse.radius * mouse.radius) {
+          const distance = Math.sqrt(distSq);
           const force = (mouse.radius - distance) / mouse.radius;
-          const dirX = (dx / distance) * force * 2.5;
-          const dirY = (dy / distance) * force * 2.5;
+          const dirX = (dx / (distance || 1)) * force * 2;
+          const dirY = (dy / (distance || 1)) * force * 2;
           this.x -= dirX;
           this.y -= dirY;
         }
@@ -175,18 +179,26 @@ function initParticleCanvas() {
     particles.push(new Particle());
   }
 
+  let animFrameId = null;
+
   function animate() {
+    if (document.hidden) {
+      animFrameId = null;
+      return;
+    }
+
     ctx.clearRect(0, 0, width, height);
 
-    // Draw connecting lines
+    // Draw connecting lines with squared distance check
     for (let a = 0; a < particles.length; a++) {
       for (let b = a + 1; b < particles.length; b++) {
         const dx = particles[a].x - particles[b].x;
         const dy = particles[a].y - particles[b].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const distSq = dx * dx + dy * dy;
 
-        if (distance < 110) {
-          const opacity = (1 - distance / 110) * 0.18;
+        if (distSq < maxDistanceSq) {
+          const distance = Math.sqrt(distSq);
+          const opacity = (1 - distance / maxDistance) * 0.16;
           ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
@@ -202,8 +214,14 @@ function initParticleCanvas() {
       p.draw();
     });
 
-    requestAnimationFrame(animate);
+    animFrameId = requestAnimationFrame(animate);
   }
+
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && !animFrameId) {
+      animFrameId = requestAnimationFrame(animate);
+    }
+  });
 
   animate();
 }
@@ -398,7 +416,30 @@ function renderProjects(filterCategory = 'all') {
 
   const filtered = filterCategory === 'all'
     ? portfolioData.projects
-    : portfolioData.projects.filter(p => p.category === filterCategory);
+    : portfolioData.projects.filter(p => p.category === filterCategory || (Array.isArray(p.categories) && p.categories.includes(filterCategory)));
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="empty-projects-state glass-card" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; border-radius: var(--radius-lg);">
+        <i class="fa-solid fa-laptop-code" style="font-size: 2.4rem; color: var(--accent-primary); margin-bottom: 1rem; display: inline-block;"></i>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-primary); font-family: var(--font-display);">More Projects Coming Soon!</h3>
+        <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 1.5rem auto; font-size: 0.9rem; line-height: 1.5;">
+          I am actively developing new software solutions in this track. Click below to view all current projects.
+        </p>
+        <button class="btn btn-primary btn-sm" id="reset-filter-btn" style="margin: 0 auto; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <i class="fa-solid fa-arrow-left"></i> <span>View All Projects</span>
+        </button>
+      </div>
+    `;
+    const resetBtn = document.getElementById('reset-filter-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+        if (allBtn) allBtn.click();
+      });
+    }
+    return;
+  }
 
   const iconMap = {
     cpu: 'fa-solid fa-microchip',

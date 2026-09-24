@@ -106,8 +106,9 @@ I enjoy building real-world projects, learning modern technologies, and continuo
     {
       id: "meterpro-official",
       title: "MeterPro – Utility Bill Manager",
-      category: "fullstack",
-      categoryLabel: "Cross-Platform App",
+      category: "mobile",
+      categories: ["all", "mobile", "fullstack"],
+      categoryLabel: "Flutter & Firebase",
       status: "live",
       statusLabel: "Live",
       featured: true,
@@ -133,7 +134,8 @@ I enjoy building real-world projects, learning modern technologies, and continuo
     {
       id: "personal-expense-tracker",
       title: "Personal Expense Tracker",
-      category: "fullstack",
+      category: "web",
+      categories: ["all", "web", "fullstack"],
       categoryLabel: "Live Web App",
       status: "live",
       statusLabel: "Live",
@@ -160,8 +162,9 @@ I enjoy building real-world projects, learning modern technologies, and continuo
     {
       id: "edusphere",
       title: "EduSphere – Multi-School Management SaaS",
-      category: "fullstack",
-      categoryLabel: "Full-Stack Web App",
+      category: "web",
+      categories: ["all", "web", "fullstack"],
+      categoryLabel: "SaaS / Full-Stack",
       status: "inprogress",
       statusLabel: "In Progress",
       featured: true,

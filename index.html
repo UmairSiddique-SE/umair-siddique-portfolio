@@ -163,15 +163,20 @@
   }
   </script>
 
-  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <!-- Preconnect & DNS-Prefetch for Fast Third-Party Assets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono with font-display: swap -->
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Font Awesome 6 Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Font Awesome 6 Icons (Non-blocking async load) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -185,6 +190,7 @@
   <!-- Ambient Glow Orbs -->
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
 
   <!-- Interactive Background Canvas -->
   <canvas id="bg-canvas"></canvas>
@@ -194,7 +200,7 @@
     <div class="container nav-container">
       <a href="#hero" class="logo" id="brand-logo">
         <div class="logo-avatar">
-          <img src="assets/profile.jpg" alt="Umair Siddique" class="logo-photo">
+          <img src="assets/profile.jpg" alt="Umair Siddique" class="logo-photo" width="40" height="40" fetchpriority="high" decoding="async">
         </div>
         <span>UMAIR <span class="gradient-text">SIDDIQUE</span></span>
       </a>
@@ -258,7 +264,7 @@
         <div class="hero-content">
           <div class="hero-badge">
             <span class="status-dot"></span>
-            <span id="hero-availability-text">Software Engineer &bull; Full Stack Developer &bull; Website Developer</span>
+            <span id="hero-availability-text" class="hero-badge-text">Software Engineer &bull; Full Stack Developer &bull; Website Developer</span>
           </div>
 
           <h1 class="hero-title">
@@ -335,8 +341,8 @@
           <div class="about-card-visual glass-card">
             <div class="avatar-container">
               <div class="avatar-inner">
-                <img src="assets/profile.jpg" alt="Umair Siddique - Software Engineer & Full-Stack Developer"
-                  class="profile-photo-img">
+                <img src="assets/profile.jpg" alt="Umair Siddique - Software Engineer &amp; Full-Stack Developer"
+                  class="profile-photo-img" width="120" height="120" loading="lazy" decoding="async">
               </div>
             </div>
             <h3 class="about-name">Umair Siddique</h3>
@@ -421,8 +427,8 @@
         <div class="projects-filter-bar">
           <button class="filter-btn active" data-filter="all">All Projects</button>
           <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-          <button class="filter-btn" data-filter="frontend">Frontend & UI</button>
-          <button class="filter-btn" data-filter="uiux">UI/UX & Collab</button>
+          <button class="filter-btn" data-filter="web">Web &amp; SaaS</button>
+          <button class="filter-btn" data-filter="mobile">Mobile &amp; Flutter</button>
         </div>
 
         <!-- Projects Grid -->
@@ -486,13 +492,11 @@
 
               <div class="form-group">
                 <label for="form-subject"><i class="fa-regular fa-bookmark"></i> Subject *</label>
-                <input type="text" id="form-subject" name="subject" class="form-input" placeholder="e.g. Website Development Project Inquiry"
-                  required>
+                <input type="text" id="form-subject" name="subject" class="form-input" placeholder="e.g. Greetings or any other subject" required>
               </div>
-
               <div class="form-group">
                 <label for="form-message"><i class="fa-regular fa-message"></i> Message *</label>
-                <textarea id="form-message" name="message" class="form-textarea" placeholder="Describe your project, timeline, budget, or question..."
+                <textarea id="form-message" name="message" class="form-textarea" placeholder="Describe your project..."
                   rows="5" required></textarea>
               </div>
 
@@ -503,20 +507,6 @@
                 </button>
               </div>
             </form>
-
-            <div class="contact-direct-strip">
-              <span class="direct-label">Or connect directly:</span>
-              <div class="direct-links">
-                <a href="mailto:umairsiddiquese@gmail.com" class="direct-pill email-pill" title="Email: umairsiddiquese@gmail.com" aria-label="Send Email">
-                  <i class="fa-solid fa-envelope"></i>
-                  <span>Email</span>
-                </a>
-                <a href="https://wa.me/923016767262" target="_blank" rel="noopener noreferrer" class="direct-pill whatsapp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
-                  <i class="fa-brands fa-whatsapp"></i>
-                  <span>WhatsApp</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -573,7 +563,7 @@
         <div class="footer-brand">
           <a href="#hero" class="logo">
             <div class="logo-avatar">
-              <img src="assets/profile.jpg" alt="Umair Siddique" class="logo-photo">
+              <img src="assets/profile.jpg" alt="Umair Siddique" class="logo-photo" width="40" height="40" loading="lazy" decoding="async">
             </div>
             <span>UMAIR <span class="gradient-text">SIDDIQUE</span></span>
           </a>
