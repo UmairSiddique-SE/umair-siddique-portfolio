@@ -982,9 +982,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .terminal-body pre {
   margin: 0;
-  white-space: pre;
+  white-space: pre-wrap;
   word-break: normal;
-  overflow-wrap: normal;
+  overflow-wrap: anywhere;
 }
 
 .code-keyword { color: #f43f5e; }
