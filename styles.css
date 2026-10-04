@@ -116,6 +116,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   color-scheme: dark;
+  overflow-x: clip;
   transition: color 1s ease, background-color 1s ease;
 }
 
@@ -749,7 +750,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 3rem;
   align-items: center;
 }
@@ -771,6 +772,12 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+}
+
+.hero-badge-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .status-dot {
@@ -991,9 +998,17 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .about-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 3rem;
   align-items: start;
+}
+
+.hero-grid > *,
+.about-grid > *,
+.skills-grid > *,
+.services-grid > *,
+.projects-grid > * {
+  min-width: 0;
 }
 
 .about-card-visual {
@@ -1069,6 +1084,11 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.7rem;
   font-size: 0.85rem;
   color: var(--text-secondary);
+}
+
+.quick-info-row span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .quick-info-row i {
@@ -2013,7 +2033,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  min-width: 270px;
+  min-width: min(270px, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
   color: var(--text-primary);
   font-size: 0.88rem;
   animation: slideToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2158,6 +2179,37 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    Responsive Media Queries (Cascaded for All Screen Sizes)
    ========================================================================== */
+@media (max-width: 920px) {
+  #nav-hire-btn {
+    display: none;
+  }
+  .nav-menu {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: rgba(9, 10, 16, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
+    border-radius: 0;
+    flex-direction: column;
+    padding: 1.8rem;
+    gap: 1.2rem;
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-normal);
+  }
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2180,9 +2232,6 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
-  }
-  #nav-hire-btn {
-    display: none;
   }
   section {
     padding: 3.5rem 0;
@@ -2291,37 +2340,21 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.86rem;
     padding: 0.52rem 0.85rem;
   }
-  .nav-menu {
-    position: fixed;
-    top: var(--nav-height);
-    left: 0;
-    width: 100%;
-    background: rgba(9, 10, 16, 0.98);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-glass);
-    border-radius: 0;
-    flex-direction: column;
-    padding: 1.8rem;
-    gap: 1.2rem;
-    transform: translateY(-150%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all var(--transition-normal);
-  }
-  .nav-menu.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .menu-toggle {
-    display: flex;
-  }
   .form-group-row {
     grid-template-columns: 1fr;
     gap: 0.85rem;
   }
   .hero-visual {
     margin-top: 1rem;
+  }
+  .tabs-nav {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+  .tab-btn {
+    flex: 1 1 auto;
+    padding: 0.55rem 0.75rem;
+    white-space: normal;
   }
   .terminal-body {
     font-size: 0.66rem;
@@ -2474,6 +2507,10 @@ h1, h2, h3, h4, h5, h6 {
   .footer-socials {
     justify-content: center;
   }
+  .toast-container {
+    right: 1rem;
+    bottom: 1rem;
+  }
 }
 
 @media (max-width: 360px) {
@@ -2488,4 +2525,3 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.82rem;
   }
 }
-
