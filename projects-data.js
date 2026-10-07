@@ -14,8 +14,8 @@ const portfolioData = {
     linkedin: "https://www.linkedin.com/in/umair-siddique-6029bb375",
     upwork: "https://www.upwork.com/freelancers/~019ece93023d118804",
     whatsapp: "https://wa.me/923016767262",
-    web3FormsAccessKey: "0709cad2-ca0d-49cf-b557-544fd38174b4", // Web3Forms Access Key for direct email delivery
-    formspreeUrl: ""        // Optional: Paste your Formspree endpoint URL
+    web3FormsAccessKey: "0709cad2-ca0d-49cf-b557-544fd38174b4",
+    formspreeUrl: ""
   },
 
   about: {
@@ -51,8 +51,11 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       workflow: {
         title: "Tools & Workflow",
         tags: [
-          "VS Code", "Git & GitHub", "Postman", "Figma",
-          "Vercel", "Firebase", "Cloudinary", "npm / pip",
+          "C", "C++", "OOP", "Data Structures & Algorithms",
+          "SQL", "DBMS", "HTML5", "CSS3", "JavaScript",
+          "React", "Python", "Node.js", "Flutter / Dart",
+          "Git & GitHub", "Postman", "VS Code",
+          "Vercel", "Firebase", "Cloudinary", "Figma",
           "Chrome DevTools", "Linux Terminal"
         ]
       }
@@ -115,11 +118,7 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       tagline: "Flutter-based electricity meter and bill management app with Firebase authentication and cloud sync.",
       description: "MeterPro is a Flutter application for electricity meter and bill management. It features Firebase Authentication with email/password, custom six-digit email OTP verification, Firestore-backed meter data, Google ML Kit and camera capabilities, and Firebase Cloud Functions for server-side OTP handling.",
       technologies: ["Dart", "Flutter", "Firebase", "Cloud Firestore", "Firebase Cloud Functions"],
-      stats: {
-        platform: "Mobile / Web App",
-        hosting: "Firebase Hosting",
-        status: "Live Production"
-      },
+      stats: { platform: "Mobile / Web App", hosting: "Firebase Hosting", status: "Live Production" },
       imageGradient: "linear-gradient(135deg, #ffb020 0%, #c17a42 50%, #14161a 100%)",
       icon: "activity",
       liveUrl: "https://meterpro-official.web.app/",
@@ -143,11 +142,7 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       tagline: "Production-focused personal finance tracker with analytics, PDF statements, and secure authentication.",
       description: "A production-focused personal finance tracker built with Flask, MongoDB, and server-rendered HTML/CSS/JavaScript. Features income and expense management, overall/weekly/monthly/daily and custom-range analytics, category breakdowns, six-month trend charts, PDF financial statements, secure password hashing, and PWA support.",
       technologies: ["Python", "Flask", "MongoDB", "HTML/CSS/JS", "ReportLab", "Vercel"],
-      stats: {
-        platform: "Web App",
-        hosting: "Vercel",
-        status: "Live on Vercel"
-      },
+      stats: { platform: "Web App", hosting: "Vercel", status: "Live on Vercel" },
       imageGradient: "linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%)",
       icon: "shopping-bag",
       liveUrl: "https://personal-expensive-tracker.vercel.app/",
@@ -171,11 +166,7 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       tagline: "A multi-school SaaS school management system with administration, academics, finance, and subscription management.",
       description: "EduSphere is a multi-school school management platform currently under active development. It brings school administration, academics, communication, finance, and subscription management into one system — with role-based access control, attendance, fees, exams, timetable, and super-admin onboarding workflows.",
       technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Tailwind CSS"],
-      stats: {
-        platform: "Web App",
-        stage: "In Development",
-        status: "Currently Building"
-      },
+      stats: { platform: "Web App", stage: "In Development", status: "Currently Building" },
       imageGradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%)",
       icon: "layers",
       liveUrl: null,
@@ -194,45 +185,25 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       icon: "code",
       title: "Full-Stack Web Development",
       description: "End-to-end web applications built with modern frontend and backend technologies, database integration, and cloud deployment.",
-      features: [
-        "React / Next.js Frontend",
-        "Node.js / Python Backend",
-        "Database Design & Integration",
-        "Vercel / Firebase Deployment"
-      ]
+      features: ["React / Next.js Frontend", "Node.js / Python Backend", "Database Design & Integration", "Vercel / Firebase Deployment"]
     },
     {
       icon: "layout",
       title: "Frontend Development",
       description: "Responsive, modern, and interactive user interfaces built with React, TypeScript, and Tailwind CSS.",
-      features: [
-        "React & Next.js Components",
-        "Responsive & Mobile-First Design",
-        "Tailwind CSS Styling",
-        "Smooth Animations & UI Polish"
-      ]
+      features: ["React & Next.js Components", "Responsive & Mobile-First Design", "Tailwind CSS Styling", "Smooth Animations & UI Polish"]
     },
     {
       icon: "zap",
       title: "Backend & API Development",
       description: "REST APIs, authentication systems, and backend logic built with Node.js, NestJS, or Python/Flask.",
-      features: [
-        "REST API Design & Development",
-        "User Authentication & JWT",
-        "Database Integration (SQL / NoSQL)",
-        "Error Handling & Validation"
-      ]
+      features: ["REST API Design & Development", "User Authentication & JWT", "Database Integration (SQL / NoSQL)", "Error Handling & Validation"]
     },
     {
       icon: "cpu",
       title: "SaaS & Web Application Development",
       description: "Practical web-based products and management systems — from idea to live deployment.",
-      features: [
-        "SaaS Application Architecture",
-        "Multi-user Systems & Dashboards",
-        "Firebase / Vercel Hosting",
-        "Iterative Feature Development"
-      ]
+      features: ["SaaS Application Architecture", "Multi-user Systems & Dashboards", "Firebase / Vercel Hosting", "Iterative Feature Development"]
     }
   ],
 
