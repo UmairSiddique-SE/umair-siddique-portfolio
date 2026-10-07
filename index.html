@@ -232,7 +232,7 @@
     <div class="container nav-container">
       <a href="#hero" class="logo" id="brand-logo">
         <div class="logo-avatar">
-          <img src="assets/profile.jpg" alt="Umair Siddique" class="logo-photo" width="40" height="40" fetchpriority="high" decoding="async">
+          <img src="assets/profile.jpg" alt="Umair Siddique" class="logo-photo" width="40" height="40" fetchpriority="high">
         </div>
         <span>UMAIR <span class="gradient-text">SIDDIQUE</span></span>
       </a>
@@ -248,7 +248,6 @@
       </nav>
 
       <div class="nav-actions">
-        <!-- Theme Accent Switcher -->
         <div class="theme-picker">
           <button class="theme-btn" id="theme-toggle-btn" aria-label="Toggle Theme Palette">
             <div class="theme-swatch" id="current-theme-swatch"></div>
@@ -278,7 +277,6 @@
           <i class="fa-solid fa-arrow-right"></i>
         </a>
 
-        <!-- Mobile Menu Toggle Button -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
           <span></span>
           <span></span>
@@ -288,10 +286,8 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main>
     <!-- Primary identity: Umair Siddique — Software Engineer & Full-Stack Developer -->
-    <!-- Hero Section -->
     <section class="hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -324,10 +320,8 @@
           </div>
         </div>
 
-        <!-- Hero Visual Code Card -->
         <div class="hero-visual">
           <div class="hero-card-wrapper">
-            <!-- Interactive Terminal Card -->
             <div class="terminal-card">
               <div class="terminal-header">
                 <div class="terminal-dots">
@@ -359,7 +353,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
       <div class="container">
         <div class="section-header">
@@ -370,7 +363,6 @@
         </div>
 
         <div class="about-grid">
-          <!-- Profile Card -->
           <div class="about-card-visual glass-card">
             <div class="avatar-container">
               <div class="avatar-inner">
@@ -393,7 +385,6 @@
             </div>
           </div>
 
-          <!-- Interactive Tabs -->
           <div class="about-tabs-container">
             <div class="tabs-nav" id="about-tabs-nav">
               <button class="tab-btn active" data-tab="story">My Story</button>
@@ -401,7 +392,6 @@
               <button class="tab-btn" data-tab="workflow">Tools & Workflow</button>
             </div>
 
-            <!-- Tab 1: Story -->
             <div class="tab-content active" id="tab-story">
               <p class="tab-story-text">
                 I'm Umair Siddique, a Software Engineer and Full-Stack Developer focused on building modern web
@@ -412,24 +402,14 @@
                 I am pursuing a BS in Software Engineering at the University of Engineering and Technology (UET), Lahore.
                 My work spans frontend and backend development, databases, APIs, and Flutter mobile apps.
               </p>
-              <h3>Who is Umair Siddique?</h3>
-              <p class="tab-story-text">
-                Umair Siddique is a Software Engineering student at UET Lahore and a Full-Stack Developer from Pakistan.
-                His projects include MeterPro, a Flutter electricity meter and bill management app; EduSphere, a
-                multi-school management SaaS currently in development; and a Personal Expense Tracker web app.
-                He works with React, JavaScript, TypeScript, Node.js, NestJS, Python, Flask, PostgreSQL, MongoDB,
-                Firebase, and Flutter.
-              </p>
             </div>
 
-            <!-- Tab 2: Education -->
             <div class="tab-content" id="tab-education">
               <div class="tab-items-list" id="education-list">
                 <!-- Injected via JavaScript -->
               </div>
             </div>
 
-            <!-- Tab 3: Tools -->
             <div class="tab-content" id="tab-workflow">
               <div class="tools-grid" id="tools-list">
                 <!-- Injected via JavaScript -->
@@ -440,7 +420,6 @@
       </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
       <div class="container">
         <div class="section-header">
@@ -455,7 +434,6 @@
       </div>
     </section>
 
-    <!-- Projects Gallery Section -->
     <section class="projects" id="projects">
       <div class="container">
         <div class="section-header">
@@ -464,7 +442,6 @@
           <p class="section-desc">Explore Umair Siddique’s software engineering projects: MeterPro, EduSphere, and Personal Expense Tracker.</p>
         </div>
 
-        <!-- Filter Bar -->
         <div class="projects-filter-bar">
           <button class="filter-btn active" data-filter="all">All Projects</button>
           <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
@@ -472,14 +449,12 @@
           <button class="filter-btn" data-filter="mobile">Mobile &amp; Flutter</button>
         </div>
 
-        <!-- Projects Grid -->
         <div class="projects-grid" id="projects-grid-container">
           <!-- Populated dynamically via script.js -->
         </div>
       </div>
     </section>
 
-    <!-- How I Work Section -->
     <section class="testimonials" id="how-i-work">
       <div class="container">
         <div class="section-header">
@@ -495,7 +470,6 @@
       </div>
     </section>
 
-    <!-- Contact & Connect Section -->
     <section class="contact" id="contact">
       <div class="container">
         <div class="section-header">
@@ -554,7 +528,6 @@
     </section>
   </main>
 
-  <!-- Project Details Modal Backdrop -->
   <div class="modal-backdrop" id="project-modal-backdrop" role="dialog" aria-modal="true">
     <div class="modal-container" id="project-modal-container">
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Modal">
@@ -594,10 +567,8 @@
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
   <div class="toast-container" id="toast-container"></div>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -646,7 +617,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="projects-data.js"></script>
   <script src="script.js"></script>
 </body>
