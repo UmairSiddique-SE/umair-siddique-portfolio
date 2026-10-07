@@ -2532,3 +2532,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.82rem;
   }
 }
+
+
+/* Developer highlights responsive layout */
+.stats-grid { width: 100%; }
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 520px) {
+  .stats-grid { grid-template-columns: 1fr !important; }
+}
