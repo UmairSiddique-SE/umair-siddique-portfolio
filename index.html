@@ -31,7 +31,6 @@
   <meta property="og:description"
     content="Official portfolio of Umair Siddique, Software Engineering student at UET Lahore and Full-Stack Developer. Explore MeterPro, EduSphere, web applications, and software projects.">
   <meta property="og:image" content="https://umair-siddique.vercel.app/assets/profile.jpg">
-  <meta property="og:image:alt" content="Umair Siddique — Software Engineer &amp; Website Developer">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="Umair Siddique — Software Engineer and Full-Stack Developer">
   <meta property="og:image:secure_url" content="https://umair-siddique.vercel.app/assets/profile.jpg">
@@ -83,7 +82,16 @@
           "alternateName": "UET Lahore",
           "url": "https://uet.edu.pk/"
         },
-        "image": "https://umair-siddique.vercel.app/assets/profile.jpg",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://umair-siddique.vercel.app/assets/profile.jpg",
+          "contentUrl": "https://umair-siddique.vercel.app/assets/profile.jpg",
+          "name": "Umair Siddique profile photo",
+          "caption": "Umair Siddique — Software Engineer and Full-Stack Developer"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://umair-siddique.vercel.app/#profile"
+        },
         "email": "mailto:umairsiddiquese@gmail.com",
         "telephone": "+923016767262",
         "url": "https://umair-siddique.vercel.app/",
@@ -144,7 +152,7 @@
           "Umair Siddique Portfolio",
           "Umair Web Developer",
           "Umair Website Developer",
-          "Umair Siiddique Portfolio"
+          "Umair Siddique Portfolio"
         ],
         "description": "Portfolio of Umair Siddique, UET Lahore Software Engineering student and Full-Stack Developer, featuring web apps, Flutter development, MeterPro, and EduSphere.",
         "author": {
@@ -152,7 +160,8 @@
         },
         "publisher": {
           "@id": "https://umair-siddique.vercel.app/#person"
-        }
+        },
+        "image": "https://umair-siddique.vercel.app/assets/profile.jpg"
       },
       {
         "@type": "ProfessionalService",
