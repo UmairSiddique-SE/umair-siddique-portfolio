@@ -477,9 +477,7 @@ function renderProjects(filterCategory = 'all') {
             <button class="btn-icon btn-sm" data-open-modal="${proj.id}" title="View Details" aria-label="View Project Details">
               <i class="fa-solid fa-circle-info"></i>
             </button>
-            <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="GitHub Repo" aria-label="GitHub Repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
+
           </div>
         </div>
       </div>
@@ -557,9 +555,7 @@ function setupProjectModal() {
 
     // Links
     const liveLink = document.getElementById('modal-live-link');
-    const githubLink = document.getElementById('modal-github-link');
-    githubLink.href = proj.githubUrl;
-    
+
     if (proj.liveUrl) {
       liveLink.href = proj.liveUrl;
       liveLink.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>`;
