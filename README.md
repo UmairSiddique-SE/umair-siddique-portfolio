@@ -65,14 +65,14 @@ My work spans frontend development, backend APIs, databases, authentication, clo
 
 ## Featured Projects
 
-### MeterPro
+### Electricity Utility App
 A Flutter application for electricity meter and bill management, backed by Firebase services including authentication, OTP verification, Cloud Firestore, Cloud Functions, Google ML Kit, and camera capabilities.
 
 **Technology:** Dart, Flutter, Firebase Authentication, Cloud Firestore, Firebase Cloud Functions, Google ML Kit, Camera, Firebase Hosting
 
 [Live Demo](https://meterpro-official.web.app/) · [View Repository](https://github.com/UmairSiddique-SE/MeterPro)
 
-### Personal Expense Tracker
+### Personal Finance Web App
 A production-focused personal finance tracker built with Flask, MongoDB, server-rendered HTML/CSS/JavaScript, and PDF reporting. It supports income and expense records, analytics, secure sessions, and financial statements.
 
 **Technology:** Python, Flask, MongoDB, HTML, CSS, JavaScript, ReportLab, Vercel
