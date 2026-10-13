@@ -108,15 +108,15 @@ I enjoy building real-world projects, learning modern technologies, and continuo
   projects: [
     {
       id: "meterpro-official",
-      title: "MeterPro – Utility Bill Manager",
+      title: "Electricity Utility App",
       category: "mobile",
       categories: ["all", "mobile", "fullstack"],
       categoryLabel: "Flutter & Firebase",
       status: "live",
       statusLabel: "Live",
       featured: true,
-      tagline: "Flutter-based electricity meter and bill management app with Firebase authentication and cloud sync.",
-      description: "MeterPro is a Flutter application for electricity meter and bill management. It features Firebase Authentication with email/password, custom six-digit email OTP verification, Firestore-backed meter data, Google ML Kit and camera capabilities, and Firebase Cloud Functions for server-side OTP handling.",
+      tagline: "A Flutter-based utility app for tracking electricity readings and estimated bills with cloud sync.",
+      description: "A Flutter application for electricity meter and bill management. It features Firebase Authentication with email/password, custom six-digit email OTP verification, Firestore-backed meter data, Google ML Kit and camera capabilities, and Firebase Cloud Functions for server-side OTP handling.",
       technologies: ["Dart", "Flutter", "Firebase", "Cloud Firestore", "Firebase Cloud Functions"],
       stats: { platform: "Mobile / Web App", hosting: "Firebase Hosting", status: "Live Production" },
       imageGradient: "linear-gradient(135deg, #ffb020 0%, #c17a42 50%, #14161a 100%)",
@@ -132,7 +132,7 @@ I enjoy building real-world projects, learning modern technologies, and continuo
     },
     {
       id: "personal-expense-tracker",
-      title: "Personal Expense Tracker",
+      title: "Personal Finance Web App",
       category: "web",
       categories: ["all", "web", "fullstack"],
       categoryLabel: "Live Web App",
