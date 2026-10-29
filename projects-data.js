@@ -145,8 +145,7 @@ I enjoy building real-world projects, learning modern technologies, and continuo
       stats: { platform: "Web App", hosting: "Vercel", status: "Live on Vercel" },
       imageGradient: "linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%)",
       icon: "shopping-bag",
-      liveUrl: "https://personal-expensive-tracker.vercel.app/",
-      githubUrl: "https://github.com/UmairSiddique-SE/HisabPro",
+      liveUrl: "https://hisabpro-app.vercel.app/",
       highlights: [
         "Income and expense tracking with category-based analytics",
         "PDF financial statements and six-month dashboard trend charts",
