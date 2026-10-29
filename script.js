@@ -536,7 +536,6 @@ function setupProjectModal() {
 
     // Links
     const liveLink = document.getElementById('modal-live-link');
-    const githubLink = document.getElementById('modal-github-link');
 
     if (liveLink) {
       if (proj.liveUrl) {
@@ -551,15 +550,6 @@ function setupProjectModal() {
         liveLink.classList.remove('btn-primary');
         liveLink.classList.add('btn-secondary');
         liveLink.style.display = 'inline-flex';
-      }
-    }
-
-    if (githubLink) {
-      if (proj.githubUrl) {
-        githubLink.href = proj.githubUrl;
-        githubLink.style.display = 'inline-flex';
-      } else {
-        githubLink.style.display = 'none';
       }
     }
 
