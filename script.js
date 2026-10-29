@@ -536,17 +536,31 @@ function setupProjectModal() {
 
     // Links
     const liveLink = document.getElementById('modal-live-link');
+    const githubLink = document.getElementById('modal-github-link');
 
-    if (proj.liveUrl) {
-      liveLink.href = proj.liveUrl;
-      liveLink.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>`;
-      liveLink.classList.remove('btn-secondary');
-      liveLink.classList.add('btn-primary');
-    } else {
-      liveLink.href = `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
-      liveLink.innerHTML = `<i class="fa-solid fa-clock"></i> <span>Coming Soon</span>`;
-      liveLink.classList.remove('btn-primary');
-      liveLink.classList.add('btn-secondary');
+    if (liveLink) {
+      if (proj.liveUrl) {
+        liveLink.href = proj.liveUrl;
+        liveLink.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>`;
+        liveLink.classList.remove('btn-secondary');
+        liveLink.classList.add('btn-primary');
+        liveLink.style.display = 'inline-flex';
+      } else {
+        liveLink.href = `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
+        liveLink.innerHTML = `<i class="fa-solid fa-clock"></i> <span>Coming Soon</span>`;
+        liveLink.classList.remove('btn-primary');
+        liveLink.classList.add('btn-secondary');
+        liveLink.style.display = 'inline-flex';
+      }
+    }
+
+    if (githubLink) {
+      if (proj.githubUrl) {
+        githubLink.href = proj.githubUrl;
+        githubLink.style.display = 'inline-flex';
+      } else {
+        githubLink.style.display = 'none';
+      }
     }
 
     backdrop.classList.add('active');
