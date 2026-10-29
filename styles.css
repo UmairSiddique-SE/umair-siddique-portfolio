@@ -2835,3 +2835,25 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 520px) {
   .stats-grid { grid-template-columns: 1fr !important; }
 }
+
+/* Status indicator icon */
+.status-icon-active {
+  color: #10b981;
+}
+
+/* Contact quick actions */
+.contact-quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+/* Modal action buttons container */
+.modal-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
