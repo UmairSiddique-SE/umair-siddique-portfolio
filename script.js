@@ -236,9 +236,9 @@ function initTypewriter() {
   const roles = [
     'Software Engineer',
     'Full-Stack Developer',
-    'Website & Web Developer',
-    'React & Python Developer',
-    'Frontend & Backend Engineer'
+    'BS SE Student @ UET Lahore',
+    'Systems & API Architect',
+    'Flutter & Cross-Platform Engineer'
   ];
 
   let roleIdx = 0;
@@ -280,14 +280,15 @@ function initTypewriter() {
 function initDynamicContent() {
   if (typeof portfolioData === 'undefined') return;
 
-  // Render About Tabs
-  renderAboutTabs();
+  // Render Disciplines in Engineering Bento
+  renderDisciplines();
 
-  // Render Skills
-  renderSkills();
+  // Render All-in-One Tech Matrix (No fake percentage bars)
+  renderTechMatrix('all');
+  setupTechMatrixFilter();
 
-  // Render Services
-  renderServices();
+  // Render Engineering Pipeline
+  renderEngineeringPipeline();
 
   // Render Projects Gallery
   renderProjects('all');
@@ -299,83 +300,53 @@ function initDynamicContent() {
   setupProjectModal();
 }
 
-/* --- Render About Tabs --- */
-function renderAboutTabs() {
-  const eduList = document.getElementById('education-list');
-  const toolsList = document.getElementById('tools-list');
+/* --- Render Disciplines in Bento Overview --- */
+function renderDisciplines() {
+  const container = document.getElementById('disciplines-container');
+  if (!container || !portfolioData.about || !portfolioData.about.disciplines) return;
 
-  // Education
-  if (eduList && portfolioData.about.tabs.education) {
-    eduList.innerHTML = portfolioData.about.tabs.education.items.map(item => `
-      <div class="tab-item-card">
-        <div class="tab-item-header">
-          <span class="tab-item-title">${item.degree}</span>
-          <span class="tab-item-year">${item.year}</span>
-        </div>
-        <div class="tab-item-sub">${item.institution}</div>
-        <div class="tab-item-honors"><i class="fa-solid fa-award"></i> ${item.honors}</div>
+  container.innerHTML = portfolioData.about.disciplines.map(item => `
+    <div class="discipline-item">
+      <i class="${item.icon}"></i>
+      <div>
+        <div class="discipline-name">${item.name}</div>
+        <div class="discipline-desc">${item.desc}</div>
       </div>
-    `).join('');
-  }
-
-  // Tools & Workflow
-  if (toolsList && portfolioData.about.tabs.workflow) {
-    toolsList.innerHTML = portfolioData.about.tabs.workflow.tags.map(tag => `
-      <div class="tool-tag">
-        <i class="fa-solid fa-check"></i>
-        <span>${tag}</span>
-      </div>
-    `).join('');
-  }
-
-  // Tab switching click handlers
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetTab = btn.getAttribute('data-tab');
-
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabContents.forEach(c => c.classList.remove('active'));
-
-      btn.classList.add('active');
-      const activeContent = document.getElementById(`tab-${targetTab}`);
-      if (activeContent) activeContent.classList.add('active');
-    });
-  });
+    </div>
+  `).join('');
 }
 
-/* --- Render Skills --- */
-function renderSkills() {
-  const container = document.getElementById('skills-grid-container');
-  if (!container || !portfolioData.skills) return;
+/* --- Render All-in-One Tech Matrix --- */
+function renderTechMatrix(filter = 'all') {
+  const container = document.getElementById('tech-matrix-container');
+  if (!container || !portfolioData.techMatrix) return;
 
-  const iconMap = {
-    layout: 'fa-solid fa-layer-group',
-    server: 'fa-solid fa-server',
-    database: 'fa-solid fa-database',
-    'pen-tool': 'fa-solid fa-compass-drafting'
-  };
+  const categories = filter === 'all'
+    ? portfolioData.techMatrix
+    : portfolioData.techMatrix.filter(c => c.category === filter);
 
-  container.innerHTML = portfolioData.skills.map(cat => `
-    <div class="skill-category-card glass-card">
-      <div class="skill-category-header">
-        <div class="skill-icon-wrap">
-          <i class="${iconMap[cat.icon] || 'fa-solid fa-code'}"></i>
+  container.innerHTML = categories.map(cat => `
+    <div class="tech-layer-group glass-card" data-category="${cat.category}">
+      <div class="tech-layer-header">
+        <div class="tech-layer-title-wrap">
+          <div class="tech-layer-icon">
+            <i class="${cat.icon}"></i>
+          </div>
+          <h3 class="tech-layer-title">${cat.title}</h3>
         </div>
-        <h3 class="skill-category-title">${cat.category}</h3>
+        <span class="tech-layer-badge">${cat.badge}</span>
       </div>
-      <div class="skill-bars-list">
+      <div class="tech-items-grid">
         ${cat.items.map(item => `
-          <div class="skill-bar-item">
-            <div class="skill-info">
-              <span class="skill-name">${item.name}</span>
-              <span class="skill-pct">${item.level}%</span>
+          <div class="tech-card-item">
+            <div class="tech-card-top">
+              <div class="tech-card-identity">
+                <i class="${item.icon}"></i>
+                <span>${item.name}</span>
+              </div>
+              <span class="tech-card-role-tag">${item.role}</span>
             </div>
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" data-progress="${item.level}"></div>
-            </div>
+            <p class="tech-card-desc">${item.desc}</p>
           </div>
         `).join('')}
       </div>
@@ -383,28 +354,38 @@ function renderSkills() {
   `).join('');
 }
 
-/* --- Render Services --- */
-function renderServices() {
-  const container = document.getElementById('services-grid');
-  if (!container || !portfolioData.services) return;
+/* --- Setup Tech Matrix Filter --- */
+function setupTechMatrixFilter() {
+  const filterBtns = document.querySelectorAll('.tech-filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-tech-filter');
+      renderTechMatrix(cat);
+      initScrollReveal();
+    });
+  });
+}
 
-  const iconMap = {
-    code: 'fa-solid fa-code',
-    layout: 'fa-solid fa-palette',
-    zap: 'fa-solid fa-bolt',
-    cpu: 'fa-solid fa-microchip'
-  };
+/* --- Render Engineering Pipeline --- */
+function renderEngineeringPipeline() {
+  const grid = document.getElementById('how-i-work-grid');
+  if (!grid) return;
+  const processItems = portfolioData.engineeringProcess || portfolioData.howIWork;
+  if (!processItems) return;
 
-  container.innerHTML = portfolioData.services.map(svc => `
-    <div class="service-card glass-card">
-      <div class="service-icon-box">
-        <i class="${iconMap[svc.icon] || 'fa-solid fa-laptop-code'}"></i>
+  grid.innerHTML = processItems.map(item => `
+    <div class="pipeline-card glass-card">
+      <div class="pipeline-top">
+        <span class="pipeline-step-num">${item.step}</span>
+        <span class="pipeline-tag">${item.tag || 'Standard'}</span>
       </div>
-      <h3 class="service-title">${svc.title}</h3>
-      <p class="service-desc">${svc.description}</p>
-      <ul class="service-checklist">
-        ${svc.features.map(f => `<li><i class="fa-solid fa-check-circle"></i> ${f}</li>`).join('')}
-      </ul>
+      <div class="pipeline-icon-wrap">
+        <i class="fa-solid fa-${item.icon}"></i>
+      </div>
+      <h3 class="pipeline-title">${item.title}</h3>
+      <p class="pipeline-desc">${item.description}</p>
     </div>
   `).join('');
 }
@@ -637,25 +618,25 @@ function initScrollReveal() {
     }
   });
 
-  // About section
-  const aboutCard = document.querySelector('.about-card-visual');
-  const aboutTabs = document.querySelector('.about-tabs-container');
-  if (aboutCard && !aboutCard.classList.contains('reveal-left')) {
-    aboutCard.classList.add('reveal-left');
-    revealObserver.observe(aboutCard);
+  // About Bento grid
+  const profileSpec = document.querySelector('.about-profile-spec');
+  const bentoRight = document.querySelector('.about-bento-right');
+  if (profileSpec && !profileSpec.classList.contains('reveal-left')) {
+    profileSpec.classList.add('reveal-left');
+    revealObserver.observe(profileSpec);
   }
-  if (aboutTabs && !aboutTabs.classList.contains('reveal-right')) {
-    aboutTabs.classList.add('reveal-right');
-    revealObserver.observe(aboutTabs);
+  if (bentoRight && !bentoRight.classList.contains('reveal-right')) {
+    bentoRight.classList.add('reveal-right');
+    revealObserver.observe(bentoRight);
   }
 
-  // Service cards alternating from left and right
-  document.querySelectorAll('.service-card').forEach((el, i) => {
-    const animClass = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
-    el.classList.remove('reveal-scale', 'reveal-left', 'reveal-right');
-    el.classList.add(animClass);
-    el.style.transitionDelay = `${(i % 2) * 0.12}s`;
-    revealObserver.observe(el);
+  // Tech Layer Groups
+  document.querySelectorAll('.tech-layer-group').forEach((el, i) => {
+    if (!el.classList.contains('reveal')) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${(i % 2) * 0.12}s`;
+      revealObserver.observe(el);
+    }
   });
 
   // Project cards alternating from left and right
@@ -667,12 +648,12 @@ function initScrollReveal() {
     revealObserver.observe(el);
   });
 
-  // How I Work process cards alternating from left and right
-  document.querySelectorAll('.how-i-work-card').forEach((el, i) => {
+  // Engineering Pipeline cards
+  document.querySelectorAll('.pipeline-card, .how-i-work-card').forEach((el, i) => {
     const animClass = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
     el.classList.remove('reveal-scale', 'reveal-left', 'reveal-right');
     el.classList.add(animClass);
-    el.style.transitionDelay = `${(i % 2) * 0.1}s`;
+    el.style.transitionDelay = `${(i % 4) * 0.08}s`;
     revealObserver.observe(el);
   });
 
@@ -758,20 +739,7 @@ function initNavbarAndScroll() {
    8. How I Work — Process Cards
    ========================================================================== */
 function initTestimonialSlider() {
-  // Replaced: renders "How I Work" process cards instead of fake testimonials
-  const grid = document.getElementById('how-i-work-grid');
-  if (!grid || !portfolioData.howIWork) return;
-
-  grid.innerHTML = portfolioData.howIWork.map(item => `
-    <div class="how-i-work-card glass-card">
-      <div class="hiw-step-badge">${item.step}</div>
-      <div class="hiw-icon-box">
-        <i class="fa-solid fa-${item.icon}"></i>
-      </div>
-      <h3 class="hiw-title">${item.title}</h3>
-      <p class="hiw-desc">${item.description}</p>
-    </div>
-  `).join('');
+  renderEngineeringPipeline();
 }
 
 /* ==========================================================================

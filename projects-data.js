@@ -1,14 +1,16 @@
 /**
  * Portfolio Data Source — Umair Siddique
- * Contains structured, honest content for projects, skills, services, and process.
+ * Software Engineer & Full-Stack Developer
+ * University of Engineering and Technology (UET) Lahore
  */
 
 const portfolioData = {
   developer: {
     name: "Umair Siddique",
     title: "Software Engineer & Full-Stack Developer",
-    availability: "Available for Freelance & Internship Roles",
-    location: "Lahore, Pakistan (Remote Friendly)",
+    education: "BS Software Engineering, UET Lahore (2025 – 2029)",
+    availability: "Open for Software Engineering Roles & Freelance",
+    location: "Lahore, Pakistan (Available Worldwide / Remote)",
     email: "umairsiddiquese@gmail.com",
     github: "https://github.com/UmairSiddique-SE",
     linkedin: "https://www.linkedin.com/in/umair-siddique-6029bb375",
@@ -19,88 +21,113 @@ const portfolioData = {
   },
 
   about: {
-    terminalCode: `const engineer = {
+    terminalCode: `interface SoftwareEngineer {
+  name: string;
+  degree: 'BS Software Engineering';
+  institution: 'UET Lahore';
+  status: 'Open for Engineering Roles & Freelance';
+  coreLanguages: string[];
+  architecture: {
+    frontend: string[];
+    backend: string[];
+    databases: string[];
+  };
+  featuredSystems: string[];
+}
+
+const engineer: SoftwareEngineer = {
   name: 'Umair Siddique',
-  role: 'Software Engineer & Full-Stack Developer',
-  education: 'BS Software Engineering (2025 - 2029)',
-  location: 'Lahore, Pakistan',
-  coreStack: ['React', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL'],
-  focus: 'Building modern web applications & practical software solutions',
-  status: '🟢 Available for freelance & internship roles'
+  degree: 'BS Software Engineering',
+  institution: 'UET Lahore',
+  status: 'Open for Engineering Roles & Freelance',
+  coreLanguages: ['TypeScript', 'JavaScript', 'Python', 'C++', 'Dart', 'SQL'],
+  architecture: {
+    frontend: ['React', 'Next.js', 'Tailwind CSS', 'Flutter'],
+    backend: ['Node.js', 'NestJS', 'Flask', 'REST APIs'],
+    databases: ['PostgreSQL', 'MongoDB', 'Cloud Firestore', 'Prisma']
+  },
+  featuredSystems: [
+    'MeterPro Electricity Utility (Flutter + Cloud Sync)',
+    'HisabPro Finance Web App (Flask + MongoDB + PWA)',
+    'EduSphere Multi-School SaaS (React + NestJS + Postgres)'
+  ]
 };
 
-console.log('Building software that solves real problems.');`,
-    tabs: {
-      story: {
-        title: "My Story",
-        content: `I'm Umair Siddique, a Software Engineer and Full-Stack Developer focused on building modern web applications and software solutions. I work across frontend, backend, databases, and APIs to turn ideas into functional, reliable products.
+console.log('Building resilient software architectures that solve real problems.');`,
 
-I enjoy building real-world projects, learning modern technologies, and continuously improving my skills through hands-on development.`
-      },
-      education: {
-        title: "Education",
-        items: [
-          {
-            degree: "BS in Software Engineering",
-            institution: "University of Engineering and Technology (UET), Lahore",
-            year: "2025 – 2029",
-            honors: "Undergraduate | BS Software Engineering"
-          }
-        ]
-      },
-      workflow: {
-        title: "Tools & Workflow",
-        tags: [
-          "C", "C++", "OOP", "Data Structures & Algorithms",
-          "SQL", "DBMS", "HTML5", "CSS3", "JavaScript",
-          "React", "Python", "Node.js", "Flutter / Dart",
-          "Git & GitHub", "Postman", "VS Code",
-          "Vercel", "Firebase", "Cloudinary", "Figma",
-          "Chrome DevTools", "Linux Terminal"
-        ]
-      }
+    summary: "Software Engineering undergraduate at the University of Engineering and Technology (UET), Lahore. Passionate about system design, full-stack web applications, clean code architecture, and high-performance APIs.",
+
+    disciplines: [
+      { name: "Data Structures & Algorithms", icon: "fa-solid fa-tree", desc: "Efficient algorithm design, complexity analysis, and problem-solving" },
+      { name: "Object-Oriented Design (OOP)", icon: "fa-solid fa-cubes", desc: "Modular, extensible software design and SOLID architectural patterns" },
+      { name: "Database Systems & Modeling", icon: "fa-solid fa-database", desc: "Normalized relational schemas (PostgreSQL) and flexible document stores (MongoDB)" },
+      { name: "RESTful API Architecture", icon: "fa-solid fa-network-wired", desc: "Stateless, secure endpoints with JWT authentication and strict input validation" },
+      { name: "Cloud & Serverless Systems", icon: "fa-solid fa-cloud", desc: "Continuous deployment with Vercel, Firebase Cloud Functions, and edge delivery" }
+    ],
+
+    education: {
+      degree: "BS in Software Engineering",
+      institution: "University of Engineering and Technology (UET), Lahore",
+      duration: "2025 – 2029",
+      status: "Undergraduate Student",
+      focus: "Computer Science Foundations, Software Architecture, Full-Stack Engineering"
     }
   },
 
-  skills: [
+  // Premium All-in-One Tech Matrix (No fake percentage bars)
+  techMatrix: [
     {
-      category: "Frontend Development",
-      icon: "layout",
+      category: "languages",
+      title: "Core Languages",
+      icon: "fa-solid fa-code",
+      badge: "Core Fundamentals",
       items: [
-        { name: "React / Next.js", level: 85 },
-        { name: "JavaScript / TypeScript", level: 82 },
-        { name: "HTML5 & CSS3", level: 90 },
-        { name: "Tailwind CSS", level: 80 }
+        { name: "TypeScript", role: "Primary", icon: "fa-solid fa-shield", desc: "Type-safe robust web and backend architectures" },
+        { name: "JavaScript (ESNext)", role: "Expertise", icon: "fa-brands fa-js", desc: "Asynchronous I/O, DOM manipulation, modern runtimes" },
+        { name: "Python", role: "Backend & ML", icon: "fa-brands fa-python", desc: "Flask services, data scripts & backend logic" },
+        { name: "C / C++", role: "Academic Core", icon: "fa-solid fa-microchip", desc: "Data structures, memory pointers, algorithms & OOP" },
+        { name: "Dart", role: "Cross-Platform", icon: "fa-solid fa-cube", desc: "Mobile & web application engineering with Flutter" },
+        { name: "SQL", role: "Relational", icon: "fa-solid fa-database", desc: "Relational queries, ACID transactions, complex joins" }
       ]
     },
     {
-      category: "Backend & APIs",
-      icon: "server",
+      category: "frontend",
+      title: "Frontend Engineering",
+      icon: "fa-solid fa-layer-group",
+      badge: "UI / UX Architecture",
       items: [
-        { name: "Node.js / Express", level: 78 },
-        { name: "NestJS", level: 65 },
-        { name: "Python / Flask", level: 75 },
-        { name: "REST API Design", level: 80 }
+        { name: "React", role: "Primary", icon: "fa-brands fa-react", desc: "Component lifecycle, custom hooks, reactive state" },
+        { name: "Next.js", role: "Production", icon: "fa-solid fa-globe", desc: "App router, SSR, static generation, API routes" },
+        { name: "Tailwind CSS", role: "Modern Styling", icon: "fa-solid fa-wind", desc: "Custom design tokens, dark mode, responsive layouts" },
+        { name: "HTML5 & CSS3", role: "Web Standards", icon: "fa-brands fa-html5", desc: "Semantic structure, modern CSS variables, glassmorphism" },
+        { name: "Flutter", role: "Mobile / Web", icon: "fa-solid fa-mobile-screen-button", desc: "High-performance cross-platform client applications" }
       ]
     },
     {
-      category: "Database & Storage",
-      icon: "database",
+      category: "backend",
+      title: "Backend & Systems",
+      icon: "fa-solid fa-server",
+      badge: "Server-Side & APIs",
       items: [
-        { name: "MongoDB", level: 78 },
-        { name: "PostgreSQL", level: 70 },
-        { name: "Prisma ORM", level: 68 },
-        { name: "Firebase / Firestore", level: 82 }
+        { name: "Node.js & Express", role: "Runtime", icon: "fa-brands fa-node-js", desc: "Scalable REST APIs, custom middleware, async operations" },
+        { name: "NestJS", role: "Enterprise", icon: "fa-solid fa-network-wired", desc: "Modular architecture, dependency injection, TypeScript" },
+        { name: "Python / Flask", role: "Lightweight", icon: "fa-solid fa-bolt", desc: "Microservices, session handling, PDF statement generation" },
+        { name: "RESTful API Design", role: "Standard", icon: "fa-solid fa-route", desc: "Resource modeling, HTTP status conventions, pagination" },
+        { name: "Cloud Functions", role: "Serverless", icon: "fa-solid fa-cloud-bolt", desc: "Event-driven background compute & OTP handling" }
       ]
     },
     {
-      category: "Tools & Platforms",
-      icon: "pen-tool",
+      category: "database",
+      title: "Databases & Cloud",
+      icon: "fa-solid fa-database",
+      badge: "Storage & Infrastructure",
       items: [
-        { name: "Git & GitHub", level: 88 },
-        { name: "Vercel / Firebase Hosting", level: 85 },
-        { name: "Cloudinary", level: 75 },
-        { name: "Figma (UI Design)", level: 70 }
+        { name: "PostgreSQL", role: "RDBMS", icon: "fa-solid fa-database", desc: "Relational modeling, indexing, foreign keys, schema migrations" },
+        { name: "MongoDB", role: "NoSQL", icon: "fa-solid fa-leaf", desc: "Document storage, aggregation queries, schema validation" },
+        { name: "Cloud Firestore", role: "Real-Time", icon: "fa-solid fa-fire", desc: "Live synchronization, offline cache, cloud security rules" },
+        { name: "Prisma ORM", role: "Data Layer", icon: "fa-solid fa-link", desc: "Type-safe database client and declarative migrations" },
+        { name: "Git & GitHub", role: "VCS", icon: "fa-brands fa-git-alt", desc: "Version control, branching workflows, pull requests" },
+        { name: "Vercel & Firebase", role: "Deployment", icon: "fa-solid fa-cloud-arrow-up", desc: "Edge deployment, environment configuration, hosting" }
       ]
     }
   ],
@@ -108,128 +135,109 @@ I enjoy building real-world projects, learning modern technologies, and continuo
   projects: [
     {
       id: "meterpro-official",
-      title: "Electricity Utility App",
+      title: "MeterPro — Electricity Utility System",
       category: "mobile",
       categories: ["all", "mobile", "fullstack"],
       categoryLabel: "Flutter & Firebase",
       status: "live",
-      statusLabel: "Live",
+      statusLabel: "Live Production",
       featured: true,
-      tagline: "A Flutter-based utility app for tracking electricity readings and estimated bills with cloud sync.",
-      description: "A Flutter application for electricity meter and bill management. It features Firebase Authentication with email/password, custom six-digit email OTP verification, Firestore-backed meter data, Google ML Kit and camera capabilities, and Firebase Cloud Functions for server-side OTP handling.",
-      technologies: ["Dart", "Flutter", "Firebase", "Cloud Firestore", "Firebase Cloud Functions"],
-      stats: { platform: "Mobile / Web App", hosting: "Firebase Hosting", status: "Live Production" },
-      imageGradient: "linear-gradient(135deg, #ffb020 0%, #c17a42 50%, #14161a 100%)",
+      tagline: "A production utility app for tracking electricity consumption, estimating tariff bills, and cloud synchronization.",
+      description: "A production-grade mobile and web utility built with Flutter and Firebase. Features custom 6-digit email OTP verification, Cloud Firestore real-time synchronization, Google ML Kit OCR integration for camera-based meter readings, and Firebase Cloud Functions for server-side OTP dispatch and validation.",
+      technologies: ["Dart", "Flutter", "Firebase Auth", "Cloud Firestore", "Cloud Functions", "Google ML Kit"],
+      stats: { platform: "Cross-Platform Mobile/Web", hosting: "Firebase Hosting", status: "Live in Production" },
+      imageGradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #1e1b4b 100%)",
       icon: "activity",
       liveUrl: "https://meterpro-official.web.app/",
       githubUrl: "https://github.com/UmairSiddique-SE/MeterPro",
       highlights: [
-        "Firebase Authentication with custom six-digit email OTP verification",
-        "Firestore-backed meter data with real-time cloud sync",
-        "Google ML Kit and camera capabilities for meter reading",
-        "Firebase Cloud Functions for server-side OTP handling"
+        "Secure Firebase Authentication with custom 6-digit server-verified email OTP",
+        "Real-time Cloud Firestore synchronization with offline persistence",
+        "Google ML Kit vision API integration for automated meter counter capture",
+        "Serverless Firebase Cloud Functions for backend security and transaction logic"
       ]
     },
     {
       id: "personal-expense-tracker",
-      title: "Personal Finance Web App",
+      title: "HisabPro — Personal Finance Web App",
       category: "web",
       categories: ["all", "web", "fullstack"],
-      categoryLabel: "Live Web App",
+      categoryLabel: "Full-Stack Web App",
       status: "live",
-      statusLabel: "Live",
+      statusLabel: "Live on Vercel",
       featured: true,
-      tagline: "A personal finance web app for tracking income, expenses, analytics, and PDF reports.",
-      description: "A personal finance web application built with Flask, MongoDB, and HTML/CSS/JavaScript. It includes income and expense records, date-range analytics, category summaries, trend charts, PDF statements, secure password hashing, and PWA support.",
-      technologies: ["Python", "Flask", "MongoDB", "HTML/CSS/JS", "ReportLab", "Vercel"],
-      stats: { platform: "Web App", hosting: "Vercel", status: "Live on Vercel" },
-      imageGradient: "linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%)",
+      tagline: "Full-stack personal finance application with dynamic category analytics, trend charts, and PDF statement generation.",
+      description: "A robust full-stack personal finance and expense management platform built with Python (Flask) and MongoDB. Features secure password hashing with account recovery, dynamic date-range income and expense tracking, visual trend breakdowns, automated PDF report generation using ReportLab, and Progressive Web App (PWA) offline support.",
+      technologies: ["Python", "Flask", "MongoDB", "JavaScript (ES6+)", "ReportLab PDF", "Vercel"],
+      stats: { platform: "Full-Stack Web / PWA", hosting: "Vercel Serverless", status: "Active & Deployed" },
+      imageGradient: "linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #1e1b4b 100%)",
       icon: "shopping-bag",
       liveUrl: "https://hisabpro-app.vercel.app/",
+      githubUrl: "",
       highlights: [
-        "Income and expense tracking with category-based analytics",
-        "PDF financial statements and six-month dashboard trend charts",
-        "Secure authentication with password hashing and account recovery",
-        "PWA support — deployed and live on Vercel"
+        "Dynamic multi-category income and expense tracking with interactive analytics",
+        "Automated financial PDF statement generation engine using ReportLab",
+        "Secure user authentication with salted password hashing and session guards",
+        "Progressive Web App (PWA) architecture deployed to Vercel edge infrastructure"
       ]
     },
     {
       id: "edusphere",
-      title: "EduSphere – Multi-School Management SaaS",
+      title: "EduSphere — Multi-School SaaS Platform",
       category: "web",
       categories: ["all", "web", "fullstack"],
-      categoryLabel: "SaaS / Full-Stack",
+      categoryLabel: "Enterprise SaaS Architecture",
       status: "inprogress",
-      statusLabel: "In Progress",
+      statusLabel: "In Active Development",
       featured: true,
-      tagline: "A multi-school SaaS school management system with administration, academics, finance, and subscription management.",
-      description: "EduSphere is a multi-school school management platform currently under active development. It brings school administration, academics, communication, finance, and subscription management into one system — with role-based access control, attendance, fees, exams, timetable, and super-admin onboarding workflows.",
-      technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Tailwind CSS"],
-      stats: { platform: "Web App", stage: "In Development", status: "Currently Building" },
-      imageGradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%)",
+      tagline: "Multi-tenant school management software with Role-Based Access Control (RBAC), academic modules, and subscription billing.",
+      description: "An enterprise-grade multi-school SaaS platform currently in active development. Designed with a modular architecture using React, TypeScript, NestJS, and PostgreSQL via Prisma ORM. Encompasses multi-tenant onboarding, hierarchical role permissions (Super Admin, School Admin, Teacher, Student), automated attendance tracking, fee management, examination grading, and scheduling.",
+      technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma ORM", "Tailwind CSS"],
+      stats: { platform: "Enterprise Web SaaS", stage: "System Architecture & Core Modules", status: "Active Development" },
+      imageGradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #1e1b4b 100%)",
       icon: "layers",
       liveUrl: null,
       githubUrl: "https://github.com/UmairSiddique-SE/School-Project",
       highlights: [
-        "Multi-school administration with role-based access control",
-        "Modules for attendance, fees, exams, timetable, library, and transport",
-        "Subscription and plan management with super-admin onboarding",
-        "Currently under active development — not yet released"
+        "Multi-tenant SaaS architecture supporting isolated school organizations",
+        "Fine-grained Role-Based Access Control (RBAC) across multiple administrative tiers",
+        "Type-safe data modeling and declarative migrations using Prisma ORM and PostgreSQL",
+        "Modular backend implementation powered by NestJS dependency injection"
       ]
     }
   ],
 
-  services: [
-    {
-      icon: "code",
-      title: "Full-Stack Web Development",
-      description: "End-to-end web applications built with modern frontend and backend technologies, database integration, and cloud deployment.",
-      features: ["React / Next.js Frontend", "Node.js / Python Backend", "Database Design & Integration", "Vercel / Firebase Deployment"]
-    },
-    {
-      icon: "layout",
-      title: "Frontend Development",
-      description: "Responsive, modern, and interactive user interfaces built with React, TypeScript, and Tailwind CSS.",
-      features: ["React & Next.js Components", "Responsive & Mobile-First Design", "Tailwind CSS Styling", "Smooth Animations & UI Polish"]
-    },
-    {
-      icon: "zap",
-      title: "Backend & API Development",
-      description: "REST APIs, authentication systems, and backend logic built with Node.js, NestJS, or Python/Flask.",
-      features: ["REST API Design & Development", "User Authentication & JWT", "Database Integration (SQL / NoSQL)", "Error Handling & Validation"]
-    },
-    {
-      icon: "cpu",
-      title: "SaaS & Web Application Development",
-      description: "Practical web-based products and management systems — from idea to live deployment.",
-      features: ["SaaS Application Architecture", "Multi-user Systems & Dashboards", "Firebase / Vercel Hosting", "Iterative Feature Development"]
-    }
-  ],
-
-  howIWork: [
+  engineeringProcess: [
     {
       step: "01",
-      title: "Understand the Problem",
-      description: "I start by deeply understanding the project requirements, goals, and target users before writing any code.",
-      icon: "magnifying-glass"
+      title: "Architecture & Data Modeling",
+      description: "Defining normalized database schemas, entity relationships, and type-safe API contracts (OpenAPI/REST) before writing production code.",
+      icon: "sitemap",
+      tag: "Design Phase"
     },
     {
       step: "02",
-      title: "Plan & Structure",
-      description: "I plan the architecture, choose the right stack, and break the project into manageable milestones.",
-      icon: "sitemap"
+      title: "Type-Safe & Modular Implementation",
+      description: "Building decoupled, maintainable modules adhering to OOP and SOLID principles using TypeScript, React, Node.js, and Python.",
+      icon: "code",
+      tag: "Development"
     },
     {
       step: "03",
-      title: "Build & Iterate",
-      description: "I build feature by feature, testing and refining along the way to ensure quality at every step.",
-      icon: "code"
+      title: "Security, Validation & Edge Cases",
+      description: "Implementing strict input sanitization, JWT/OTP authentication, role guards, and comprehensive error handling across every endpoint.",
+      icon: "shield-halved",
+      tag: "Verification"
     },
     {
       step: "04",
-      title: "Deploy & Deliver",
-      description: "I deploy to production, verify everything works correctly, and hand over clean, documented code.",
-      icon: "rocket"
+      title: "Cloud Deployment & Optimization",
+      description: "Packaging and deploying to production platforms (Vercel & Firebase) with automated build validation, asset optimization, and live monitoring.",
+      icon: "rocket",
+      tag: "Production"
     }
   ]
 };
+
+// Aliases for compatibility with any legacy hooks
+portfolioData.howIWork = portfolioData.engineeringProcess;
