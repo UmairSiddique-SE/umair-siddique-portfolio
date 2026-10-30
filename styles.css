@@ -114,7 +114,9 @@
 /* --------------------------------------------------------------------------
    2. Reset & Core Typography
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -124,6 +126,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -137,7 +140,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--text-primary);
@@ -151,7 +159,9 @@ a {
   transition: all var(--transition-fast);
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   font-family: inherit;
   font-size: inherit;
   border: none;
@@ -194,6 +204,7 @@ img {
 .gradient-text {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -249,9 +260,17 @@ img {
 }
 
 @keyframes ambientFloat {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(40px, -30px) scale(1.1); }
-  100% { transform: translate(-30px, 40px) scale(0.95); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(40px, -30px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-30px, 40px) scale(0.95);
+  }
 }
 
 /* Scroll Progress Bar */
@@ -270,8 +289,8 @@ img {
 /* Glass Card Component */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -329,6 +348,7 @@ img {
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
   border: 1px solid var(--border-glass);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -380,8 +400,8 @@ img {
 
 .site-header.scrolled {
   background: rgba(8, 9, 17, 0.85);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-subtle);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
@@ -497,6 +517,7 @@ img {
   right: 0;
   width: 170px;
   background: rgba(14, 18, 32, 0.95);
+  -webkit-backdrop-filter: blur(25px);
   backdrop-filter: blur(25px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
@@ -514,8 +535,15 @@ img {
 }
 
 @keyframes dropdownFade {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .theme-option {
@@ -538,11 +566,25 @@ img {
   color: var(--text-primary);
 }
 
-.swatch-violet { background: #8b5cf6; }
-.swatch-cyan { background: #00e5ff; }
-.swatch-emerald { background: #10b981; }
-.swatch-amber { background: #f59e0b; }
-.swatch-rose { background: #f43f5e; }
+.swatch-violet {
+  background: #8b5cf6;
+}
+
+.swatch-cyan {
+  background: #00e5ff;
+}
+
+.swatch-emerald {
+  background: #10b981;
+}
+
+.swatch-amber {
+  background: #f59e0b;
+}
+
+.swatch-rose {
+  background: #f43f5e;
+}
 
 /* Mobile Menu Toggle */
 .menu-toggle {
@@ -625,8 +667,17 @@ img {
 }
 
 @keyframes pulseBeacon {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.4; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
 }
 
 .hero-title {
@@ -654,8 +705,15 @@ img {
 }
 
 @keyframes blinkCursor {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--accent-primary); }
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--accent-primary);
+  }
 }
 
 .hero-description {
@@ -763,8 +821,13 @@ img {
 }
 
 @keyframes photoGlowPulse {
-  0% { box-shadow: 0 0 25px var(--accent-glow), 0 0 50px rgba(0, 229, 255, 0.15); }
-  100% { box-shadow: 0 0 45px var(--accent-glow), 0 0 80px rgba(0, 229, 255, 0.35); }
+  0% {
+    box-shadow: 0 0 25px var(--accent-glow), 0 0 50px rgba(0, 229, 255, 0.15);
+  }
+
+  100% {
+    box-shadow: 0 0 45px var(--accent-glow), 0 0 80px rgba(0, 229, 255, 0.35);
+  }
 }
 
 .avatar-inner {
@@ -885,6 +948,7 @@ img {
   font-family: var(--font-display);
   background: var(--accent-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
   margin-bottom: 0.35rem;
@@ -1409,8 +1473,8 @@ section {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.82);
-  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   z-index: 2000;
   display: none;
   align-items: center;
@@ -1424,8 +1488,15 @@ section {
 }
 
 @keyframes modalFadeIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .modal-container {
@@ -1562,6 +1633,7 @@ section {
   padding: 0.85rem 1.4rem;
   border-radius: var(--radius-full);
   background: rgba(14, 18, 32, 0.95);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid var(--accent-border);
   box-shadow: var(--shadow-lg), 0 0 25px var(--accent-glow);
@@ -1576,8 +1648,15 @@ section {
 }
 
 @keyframes toastSlideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1646,7 +1725,10 @@ section {
 /* --------------------------------------------------------------------------
    16. Scroll Reveal Animation Classes
    -------------------------------------------------------------------------- */
-.reveal, .reveal-left, .reveal-right, .reveal-up {
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-up {
   opacity: 0;
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
@@ -1677,6 +1759,32 @@ section {
   transform: translate(0, 0) !important;
 }
 
+
+/* Contact Section Utility Classes */
+.contact-card-title {
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.contact-timezone-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.2rem;
+}
+
+.contact-timezone-note i {
+  color: var(--accent-primary);
+  margin-right: 0.4rem;
+}
+
 /* --------------------------------------------------------------------------
    17. Responsive Media Queries
    -------------------------------------------------------------------------- */
@@ -1685,27 +1793,34 @@ section {
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
+
   .hero-content {
     align-items: center;
     text-align: center;
   }
+
   .hero-description {
     margin-left: auto;
     margin-right: auto;
   }
+
   .hero-tech-strip {
     justify-content: center;
   }
+
   .hero-actions {
     justify-content: center;
   }
+
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
   .engineering-focus-grid {
     grid-template-columns: 1fr;
   }
+
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
@@ -1718,6 +1833,7 @@ section {
     left: 0;
     width: 100%;
     background: rgba(8, 9, 17, 0.98);
+    -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
     border-bottom: 1px solid var(--border-glass);
     flex-direction: column;
@@ -1725,22 +1841,28 @@ section {
     gap: 1.25rem;
     display: none;
   }
+
   .nav-menu.open {
     display: flex;
   }
+
   .menu-toggle {
     display: flex;
   }
+
   #nav-hire-btn {
     display: none;
   }
+
   .form-group-row {
     grid-template-columns: 1fr;
   }
+
   .footer-top {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .footer-bottom {
     flex-direction: column;
     gap: 1rem;

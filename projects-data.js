@@ -1,5 +1,5 @@
 /**
- * Portfolio Data Source â€” Umair Siddique
+ * Portfolio Data Source - Umair Siddique
  * Software Engineer & Full-Stack Developer
  * University of Engineering and Technology (UET) Lahore
  */
@@ -8,7 +8,7 @@ const portfolioData = {
   developer: {
     name: "Umair Siddique",
     title: "Software Engineer & Full-Stack Developer",
-    education: "BS Software Engineering, UET Lahore (2025 â€“ 2029)",
+    education: "BS Software Engineering, UET Lahore (2025 - 2029)",
     availability: "Open for Software Engineering Roles & Freelance",
     location: "Lahore, Pakistan (Available Worldwide / Remote)",
     email: "umairsiddiquese@gmail.com",
@@ -68,13 +68,13 @@ console.log('Building resilient software architectures that solve real problems.
     education: {
       degree: "BS in Software Engineering",
       institution: "University of Engineering and Technology (UET), Lahore",
-      duration: "2025 â€“ 2029",
+      duration: "2025 - 2029",
       status: "Undergraduate Student",
       focus: "Computer Science Foundations, Software Architecture, Full-Stack Engineering"
     }
   },
 
-  // Premium All-in-One Tech Matrix (No fake percentage bars)
+  // Minimalist & Clean Tech Matrix
   techMatrix: [
     {
       category: "languages",
@@ -135,7 +135,7 @@ console.log('Building resilient software architectures that solve real problems.
   projects: [
     {
       id: "meterpro-official",
-      title: "MeterPro — Electricity Utility System",
+      title: "MeterPro - Electricity Utility System",
       category: "mobile",
       categories: ["all", "mobile", "fullstack"],
       categoryLabel: "Flutter & Firebase",
@@ -159,7 +159,7 @@ console.log('Building resilient software architectures that solve real problems.
     },
     {
       id: "personal-expense-tracker",
-      title: "HisabPro — Personal Finance Web App",
+      title: "HisabPro - Personal Finance Web App",
       category: "web",
       categories: ["all", "web", "fullstack"],
       categoryLabel: "Full-Stack Web App",
@@ -183,7 +183,7 @@ console.log('Building resilient software architectures that solve real problems.
     },
     {
       id: "edusphere",
-      title: "EduSphere — Multi-School SaaS Platform",
+      title: "EduSphere - Multi-School SaaS Platform",
       category: "web",
       categories: ["all", "web", "fullstack"],
       categoryLabel: "Enterprise SaaS Architecture",
@@ -203,78 +203,6 @@ console.log('Building resilient software architectures that solve real problems.
         "Fine-grained Role-Based Access Control (RBAC) across multiple administrative tiers",
         "Type-safe data modeling and declarative migrations using Prisma ORM and PostgreSQL",
         "Modular backend implementation powered by NestJS dependency injection"
-      ]
-    },
-    {
-      id: "devdoc-ai",
-      title: "DevDoc AI — Intelligent API Documentation Engine",
-      category: "web",
-      categories: ["all", "web", "fullstack"],
-      categoryLabel: "AI & Developer Tooling",
-      status: "live",
-      statusLabel: "Featured System",
-      featured: true,
-      tagline: "Automated OpenAPI documentation generator with semantic vector search and real-time schema validation.",
-      description: "An intelligent developer platform that ingests backend route definitions, validates JSON schema contracts, and produces interactive API documentation. Built with Next.js 14, TypeScript, Python FastAPI, and PostgreSQL with pgvector for semantic endpoint search and interactive troubleshooting.",
-      technologies: ["Next.js 14", "TypeScript", "FastAPI", "PostgreSQL", "pgvector", "Tailwind CSS"],
-      stats: { platform: "Full-Stack AI Web App", database: "PostgreSQL + pgvector", status: "Active Project" },
-      imageGradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #1e1b4b 100%)",
-      icon: "cpu",
-      liveUrl: null,
-      githubUrl: "https://github.com/UmairSiddique-SE",
-      highlights: [
-        "Automated endpoint extraction and interactive OpenAPI 3.0 specification synthesis",
-        "Semantic vector search with pgvector for parameter and error code lookups",
-        "Type-safe TypeScript frontend with dynamic request payload test bench",
-        "High-performance async FastAPI ingestion pipeline with background workers"
-      ]
-    },
-    {
-      id: "nexus-commerce",
-      title: "Nexus Commerce — Distributed E-Commerce Backend",
-      category: "fullstack",
-      categories: ["all", "web", "fullstack"],
-      categoryLabel: "High-Concurrency Backend",
-      status: "live",
-      statusLabel: "Production Ready",
-      featured: true,
-      tagline: "Distributed e-commerce architecture with Redis cart caching, Stripe webhook reconciliation, and inventory lock guards.",
-      description: "A production-grade e-commerce backend built to handle high-concurrency traffic without inventory overselling. Employs Redis for temporary cart session locks, PostgreSQL ACID transactions with row-level locks, and an idempotent webhook consumer for Stripe payment verification.",
-      technologies: ["Node.js", "Express", "TypeScript", "PostgreSQL", "Redis", "Docker", "Stripe API"],
-      stats: { architecture: "Microservices & Caching", database: "PostgreSQL & Redis", status: "Open Source" },
-      imageGradient: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #0f172a 100%)",
-      icon: "shield",
-      liveUrl: null,
-      githubUrl: "https://github.com/UmairSiddique-SE",
-      highlights: [
-        "Optimistic and row-level locking to eliminate inventory overselling during sales",
-        "Distributed cart and rate-limiting cache layer powered by Redis",
-        "Idempotent Stripe webhook receiver with automatic order state reconciliation",
-        "Containerized microservice setup with Docker Compose for local and cloud runs"
-      ]
-    },
-    {
-      id: "tasksync-live",
-      title: "TaskSync — Real-Time Collaborative Workspace",
-      category: "web",
-      categories: ["all", "web", "fullstack"],
-      categoryLabel: "Real-Time Collaboration App",
-      status: "live",
-      statusLabel: "Interactive Demo",
-      featured: true,
-      tagline: "Multiplayer task management with WebSockets, optimistic UI updates, and drag-and-drop Kanban boards.",
-      description: "A real-time Kanban and productivity workspace inspired by Linear. Built with React, Node.js, and Socket.io, supporting live cursor presence, instant cross-client board synchronization, markdown issue descriptions, and offline optimistic updates.",
-      technologies: ["React", "TypeScript", "Node.js", "Socket.io", "MongoDB", "Tailwind CSS"],
-      stats: { platform: "Real-Time Web Application", sync: "WebSocket Protocol", status: "Active Project" },
-      imageGradient: "linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #1e1b4b 100%)",
-      icon: "users",
-      liveUrl: null,
-      githubUrl: "https://github.com/UmairSiddique-SE",
-      highlights: [
-        "Sub-50ms bidirectional state synchronization powered by Socket.io WebSockets",
-        "Optimistic UI updates with instant rollback on network latency or drops",
-        "Interactive drag-and-drop Kanban workflow with smooth CSS micro-interactions",
-        "JWT-guarded team workspaces with granular permissions and activity audit logs"
       ]
     }
   ],
@@ -311,5 +239,6 @@ console.log('Building resilient software architectures that solve real problems.
   ]
 };
 
-// Aliases for compatibility with any legacy hooks
+// Aliases for compatibility
 portfolioData.howIWork = portfolioData.engineeringProcess;
+
