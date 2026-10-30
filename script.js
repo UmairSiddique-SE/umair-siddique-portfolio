@@ -316,7 +316,7 @@ function renderDisciplines() {
   `).join('');
 }
 
-/* --- Render All-in-One Tech Matrix --- */
+/* --- Render Minimalist Tech Matrix --- */
 function renderTechMatrix(filter = 'all') {
   const container = document.getElementById('tech-matrix-container');
   if (!container || !portfolioData.techMatrix) return;
@@ -334,19 +334,12 @@ function renderTechMatrix(filter = 'all') {
           </div>
           <h3 class="tech-layer-title">${cat.title}</h3>
         </div>
-        <span class="tech-layer-badge">${cat.badge}</span>
       </div>
-      <div class="tech-items-grid">
+      <div class="tech-chips-grid">
         ${cat.items.map(item => `
-          <div class="tech-card-item">
-            <div class="tech-card-top">
-              <div class="tech-card-identity">
-                <i class="${item.icon}"></i>
-                <span>${item.name}</span>
-              </div>
-              <span class="tech-card-role-tag">${item.role}</span>
-            </div>
-            <p class="tech-card-desc">${item.desc}</p>
+          <div class="tech-badge-chip">
+            <i class="${item.icon}"></i>
+            <span>${item.name}</span>
           </div>
         `).join('')}
       </div>

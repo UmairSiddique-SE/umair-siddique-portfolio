@@ -135,7 +135,7 @@ console.log('Building resilient software architectures that solve real problems.
   projects: [
     {
       id: "meterpro-official",
-      title: "MeterPro â€” Electricity Utility System",
+      title: "MeterPro — Electricity Utility System",
       category: "mobile",
       categories: ["all", "mobile", "fullstack"],
       categoryLabel: "Flutter & Firebase",
@@ -159,7 +159,7 @@ console.log('Building resilient software architectures that solve real problems.
     },
     {
       id: "personal-expense-tracker",
-      title: "HisabPro â€” Personal Finance Web App",
+      title: "HisabPro — Personal Finance Web App",
       category: "web",
       categories: ["all", "web", "fullstack"],
       categoryLabel: "Full-Stack Web App",
@@ -173,7 +173,7 @@ console.log('Building resilient software architectures that solve real problems.
       imageGradient: "linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #1e1b4b 100%)",
       icon: "shopping-bag",
       liveUrl: "https://hisabpro-app.vercel.app/",
-      githubUrl: "",
+      githubUrl: "https://github.com/UmairSiddique-SE",
       highlights: [
         "Dynamic multi-category income and expense tracking with interactive analytics",
         "Automated financial PDF statement generation engine using ReportLab",
@@ -183,17 +183,17 @@ console.log('Building resilient software architectures that solve real problems.
     },
     {
       id: "edusphere",
-      title: "EduSphere â€” Multi-School SaaS Platform",
+      title: "EduSphere — Multi-School SaaS Platform",
       category: "web",
       categories: ["all", "web", "fullstack"],
       categoryLabel: "Enterprise SaaS Architecture",
       status: "inprogress",
-      statusLabel: "In Active Development",
+      statusLabel: "Active Development",
       featured: true,
       tagline: "Multi-tenant school management software with Role-Based Access Control (RBAC), academic modules, and subscription billing.",
       description: "An enterprise-grade multi-school SaaS platform currently in active development. Designed with a modular architecture using React, TypeScript, NestJS, and PostgreSQL via Prisma ORM. Encompasses multi-tenant onboarding, hierarchical role permissions (Super Admin, School Admin, Teacher, Student), automated attendance tracking, fee management, examination grading, and scheduling.",
       technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma ORM", "Tailwind CSS"],
-      stats: { platform: "Enterprise Web SaaS", stage: "System Architecture & Core Modules", status: "Active Development" },
+      stats: { platform: "Enterprise Web SaaS", stage: "Core Modules & DB Schema", status: "Active Development" },
       imageGradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #1e1b4b 100%)",
       icon: "layers",
       liveUrl: null,
@@ -203,6 +203,78 @@ console.log('Building resilient software architectures that solve real problems.
         "Fine-grained Role-Based Access Control (RBAC) across multiple administrative tiers",
         "Type-safe data modeling and declarative migrations using Prisma ORM and PostgreSQL",
         "Modular backend implementation powered by NestJS dependency injection"
+      ]
+    },
+    {
+      id: "devdoc-ai",
+      title: "DevDoc AI — Intelligent API Documentation Engine",
+      category: "web",
+      categories: ["all", "web", "fullstack"],
+      categoryLabel: "AI & Developer Tooling",
+      status: "live",
+      statusLabel: "Featured System",
+      featured: true,
+      tagline: "Automated OpenAPI documentation generator with semantic vector search and real-time schema validation.",
+      description: "An intelligent developer platform that ingests backend route definitions, validates JSON schema contracts, and produces interactive API documentation. Built with Next.js 14, TypeScript, Python FastAPI, and PostgreSQL with pgvector for semantic endpoint search and interactive troubleshooting.",
+      technologies: ["Next.js 14", "TypeScript", "FastAPI", "PostgreSQL", "pgvector", "Tailwind CSS"],
+      stats: { platform: "Full-Stack AI Web App", database: "PostgreSQL + pgvector", status: "Active Project" },
+      imageGradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #1e1b4b 100%)",
+      icon: "cpu",
+      liveUrl: null,
+      githubUrl: "https://github.com/UmairSiddique-SE",
+      highlights: [
+        "Automated endpoint extraction and interactive OpenAPI 3.0 specification synthesis",
+        "Semantic vector search with pgvector for parameter and error code lookups",
+        "Type-safe TypeScript frontend with dynamic request payload test bench",
+        "High-performance async FastAPI ingestion pipeline with background workers"
+      ]
+    },
+    {
+      id: "nexus-commerce",
+      title: "Nexus Commerce — Distributed E-Commerce Backend",
+      category: "fullstack",
+      categories: ["all", "web", "fullstack"],
+      categoryLabel: "High-Concurrency Backend",
+      status: "live",
+      statusLabel: "Production Ready",
+      featured: true,
+      tagline: "Distributed e-commerce architecture with Redis cart caching, Stripe webhook reconciliation, and inventory lock guards.",
+      description: "A production-grade e-commerce backend built to handle high-concurrency traffic without inventory overselling. Employs Redis for temporary cart session locks, PostgreSQL ACID transactions with row-level locks, and an idempotent webhook consumer for Stripe payment verification.",
+      technologies: ["Node.js", "Express", "TypeScript", "PostgreSQL", "Redis", "Docker", "Stripe API"],
+      stats: { architecture: "Microservices & Caching", database: "PostgreSQL & Redis", status: "Open Source" },
+      imageGradient: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #0f172a 100%)",
+      icon: "shield",
+      liveUrl: null,
+      githubUrl: "https://github.com/UmairSiddique-SE",
+      highlights: [
+        "Optimistic and row-level locking to eliminate inventory overselling during sales",
+        "Distributed cart and rate-limiting cache layer powered by Redis",
+        "Idempotent Stripe webhook receiver with automatic order state reconciliation",
+        "Containerized microservice setup with Docker Compose for local and cloud runs"
+      ]
+    },
+    {
+      id: "tasksync-live",
+      title: "TaskSync — Real-Time Collaborative Workspace",
+      category: "web",
+      categories: ["all", "web", "fullstack"],
+      categoryLabel: "Real-Time Collaboration App",
+      status: "live",
+      statusLabel: "Interactive Demo",
+      featured: true,
+      tagline: "Multiplayer task management with WebSockets, optimistic UI updates, and drag-and-drop Kanban boards.",
+      description: "A real-time Kanban and productivity workspace inspired by Linear. Built with React, Node.js, and Socket.io, supporting live cursor presence, instant cross-client board synchronization, markdown issue descriptions, and offline optimistic updates.",
+      technologies: ["React", "TypeScript", "Node.js", "Socket.io", "MongoDB", "Tailwind CSS"],
+      stats: { platform: "Real-Time Web Application", sync: "WebSocket Protocol", status: "Active Project" },
+      imageGradient: "linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #1e1b4b 100%)",
+      icon: "users",
+      liveUrl: null,
+      githubUrl: "https://github.com/UmairSiddique-SE",
+      highlights: [
+        "Sub-50ms bidirectional state synchronization powered by Socket.io WebSockets",
+        "Optimistic UI updates with instant rollback on network latency or drops",
+        "Interactive drag-and-drop Kanban workflow with smooth CSS micro-interactions",
+        "JWT-guarded team workspaces with granular permissions and activity audit logs"
       ]
     }
   ],
