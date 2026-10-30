@@ -2877,6 +2877,44 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Photo wrap force top */
+.hero-photo-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 2rem;
+  order: -1;
+}
+
+.hero-photo-ring {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #00e5ff, #7c3aed);
+  box-shadow: 0 0 30px rgba(0,229,255,0.4), 0 0 70px rgba(0,229,255,0.15);
+  animation: hero-photo-pulse 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.hero-profile-photo {
+  width: 162px;
+  height: 162px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border: 4px solid #0d0d0d;
+}
+
+@keyframes hero-photo-pulse {
+  0%, 100% { box-shadow: 0 0 25px rgba(0,229,255,0.4), 0 0 60px rgba(0,229,255,0.12); }
+  50%       { box-shadow: 0 0 45px rgba(0,229,255,0.65), 0 0 100px rgba(0,229,255,0.30); }
 }
 
 .hero-centered .hero-badge {
