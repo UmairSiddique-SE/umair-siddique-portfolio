@@ -7,7 +7,7 @@
 const portfolioData = {
   developer: {
     name: "Umair Siddique",
-    title: "Software Engineer & Full-Stack Developer",
+    title: "Full-Stack Systems Engineer",
     education: "BS Software Engineering, UET Lahore (2025 - 2029)",
     availability: "Open for Software Engineering Roles & Freelance",
     location: "Lahore, Pakistan (Available Worldwide / Remote)",
