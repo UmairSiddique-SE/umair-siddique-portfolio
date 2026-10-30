@@ -234,11 +234,12 @@ function initTypewriter() {
   if (!el) return;
 
   const roles = [
-    'Software Engineer',
-    'Full-Stack Developer',
-    'BS SE Student @ UET Lahore',
-    'Systems & API Architect',
-    'Flutter & Cross-Platform Engineer'
+    'High-Caliber Software Engineer',
+    'Full-Stack Systems Architect',
+    'Algorithmic Problem Solver & Innovator',
+    'BS Software Engineering @ UET Lahore',
+    'Scalable Cloud & Backend Specialist',
+    'Cross-Platform Flutter & Web Engineer'
   ];
 
   let roleIdx = 0;

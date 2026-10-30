@@ -7,7 +7,7 @@
 const portfolioData = {
   developer: {
     name: "Umair Siddique",
-    title: "Full-Stack Systems Engineer",
+    title: "Innovative Systems Architect & Full-Stack Engineer",
     education: "BS Software Engineering, UET Lahore (2025 - 2029)",
     availability: "Open for Software Engineering Roles & Freelance",
     location: "Lahore, Pakistan (Available Worldwide / Remote)",
@@ -55,7 +55,7 @@ const engineer: SoftwareEngineer = {
 
 console.log('Building resilient software architectures that solve real problems.');`,
 
-    summary: "Software Engineering undergraduate at the University of Engineering and Technology (UET), Lahore. Passionate about system design, full-stack web applications, clean code architecture, and high-performance APIs.",
+    summary: "High-caliber Software Engineering student at UET Lahore with exceptional competence in designing resilient full-stack systems, type-safe API architectures, and scalable cloud solutions with algorithmic precision and clean code.",
 
     disciplines: [
       { name: "Data Structures & Algorithms", icon: "fa-solid fa-tree", desc: "Efficient algorithm design, complexity analysis, and problem-solving" },
