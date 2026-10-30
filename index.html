@@ -170,135 +170,111 @@
   </header>
 
   <main>
-    <section class="hero hero-centered" id="hero">
+    <!-- HERO SECTION: High-Converting 2-Column Market Standard Layout -->
+    <section class="hero" id="hero">
       <div class="container">
-        <div class="hero-content-center">
+        <div class="hero-grid">
 
-          <!-- Profile Photo - Sab se Upar -->
-          <div class="hero-photo-wrap">
-            <div class="hero-photo-ring">
-              <img src="assets/profile.jpg" alt="Umair Siddique - Software Engineer" class="hero-profile-photo" width="160" height="160" fetchpriority="high" decoding="async">
+          <!-- LEFT COLUMN: High Impact Developer Pitch & CTAs -->
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="status-dot"></span>
+              <span id="hero-availability-text" class="hero-badge-text">Available for Software Engineering &bull; Full-Stack Roles</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="sr-only">Umair Siddique — Software Engineer &amp; Full-Stack Developer.</span>
+              Full-Stack <span class="gradient-text">Software Engineer</span> &amp; Systems Architect.
+            </h1>
+
+            <div class="hero-subtitle">
+              I am a <span class="typewriter-text" id="typewriter"></span>
+            </div>
+
+            <p class="hero-description">
+              Pursuing BS in Software Engineering at <strong>UET Lahore</strong>. Architecting production-grade web systems, resilient backend APIs, and real-world software solutions with clean, maintainable architecture.
+            </p>
+
+            <!-- Modern Tech Chips Strip -->
+            <div class="hero-tech-strip">
+              <span class="tech-tag"><i class="fa-brands fa-react"></i> React / Next.js</span>
+              <span class="tech-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="tech-tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="tech-tag"><i class="fa-solid fa-mobile-screen"></i> Flutter</span>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary" id="hero-explore-projects">
+                <i class="fa-solid fa-layer-group"></i><span>View Projects</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary" id="hero-contact-btn">
+                <i class="fa-regular fa-paper-plane"></i><span>Get in Touch</span>
+              </a>
+              <a href="https://wa.me/923016767262" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-whatsapp-cta">
+                <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+              </a>
             </div>
           </div>
 
-          <div class="hero-badge"><span class="status-dot"></span><span id="hero-availability-text"
-              class="hero-badge-text">Software Engineer &bull; BS SE at UET Lahore &bull; Full-Stack Systems</span>
-          </div>
-          <h1 class="hero-title"><span class="sr-only">Umair Siddique — Software Engineer &amp; Full-Stack Developer.
-            </span>Full-Stack <span class="gradient-text">Software Engineer</span> &amp; Systems Developer.
-          </h1>
-          <div class="hero-subtitle">I am a <span class="typewriter-text" id="typewriter"></span></div>
-          <p class="hero-description">I'm <strong>Umair Siddique</strong> — studying Software Engineering at <strong>UET
-              Lahore</strong>. I architect production-grade web systems, resilient backend APIs, and real-world software
-            solutions with clean, maintainable architecture.</p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary" id="hero-explore-projects"><i
-                class="fa-solid fa-layer-group"></i><span>Featured Systems</span></a>
-            <a href="#about" class="btn btn-secondary" id="hero-about-btn"><i class="fa-solid fa-user"></i><span>About
-                Engineer</span></a>
-            <a href="#contact" class="btn btn-secondary" id="hero-contact-btn"><i
-                class="fa-regular fa-paper-plane"></i><span>Get in Touch</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
+          <!-- RIGHT COLUMN: Floating Glassmorphism Profile Spec Card (Upper Right) -->
+          <div class="hero-card-col">
+            <div class="about-profile-spec glass-card hero-floating-card">
+              <div class="about-spec-header">
+                <div class="avatar-container">
+                  <div class="avatar-inner">
+                    <img src="assets/profile.jpg" alt="Umair Siddique - Software Engineer &amp; Full-Stack Developer"
+                      class="profile-photo-img" width="130" height="130" fetchpriority="high" decoding="async">
+                  </div>
+                </div>
+                <h3 class="about-name">Umair Siddique</h3>
+                <p class="about-role">Software Engineer &amp; Full-Stack Developer</p>
+                <div class="profile-badge-pill"><i class="fa-solid fa-graduation-cap"></i> BS SE @ UET Lahore</div>
+              </div>
 
-    <section class="about" id="about">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge"><i class="fa-solid fa-user-astronaut"></i> Engineering Profile</div>
-          <h2 class="section-title">Academic Rigor. <span class="gradient-text">Practical</span> Engineering.</h2>
-          <p class="section-desc">Software Engineering undergraduate at UET Lahore with an emphasis on system design,
-            clean architecture, and modern full-stack web products.</p>
-        </div>
-
-        <div class="about-bento-grid">
-          <div class="about-profile-spec glass-card">
-            <div class="about-spec-header">
-              <div class="avatar-container">
-                <div class="avatar-inner">
-                  <img src="assets/profile.jpg" alt="Umair Siddique - Software Engineer &amp; Full-Stack Developer"
-                    class="profile-photo-img" width="120" height="120" loading="lazy" decoding="async">
+              <div class="about-spec-meta">
+                <div class="spec-meta-row">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Lahore, Pakistan &bull; Available Worldwide</span>
+                </div>
+                <div class="spec-meta-row">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <span>University of Engineering &amp; Technology (UET)</span>
+                </div>
+                <div class="spec-meta-row">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>umairsiddiquese@gmail.com</span>
+                </div>
+                <div class="spec-meta-row">
+                  <i class="fa-solid fa-circle-check status-icon-active"></i>
+                  <span>Status: Available for Engineering &amp; Freelance</span>
                 </div>
               </div>
-              <h3 class="about-name">Umair Siddique</h3>
-              <p class="about-role">Software Engineer &amp; Full-Stack Developer</p>
-              <div class="profile-badge-pill"><i class="fa-solid fa-graduation-cap"></i> BS SE @ UET Lahore</div>
-            </div>
 
-            <div class="about-spec-meta">
-              <div class="spec-meta-row">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Lahore, Pakistan &bull; Available Worldwide</span>
+              <div class="spec-socials-row">
+                <a href="https://www.linkedin.com/in/umair-siddique-6029bb375" target="_blank" rel="noopener noreferrer"
+                  class="btn-icon btn-sm" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://wa.me/923016767262" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm"
+                  aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.upwork.com/freelancers/~019ece93023d118804" target="_blank" rel="noopener noreferrer"
+                  class="btn-icon btn-sm" aria-label="Upwork"><i class="fa-brands fa-upwork"></i></a>
+                <a href="https://github.com/UmairSiddique-SE" target="_blank" rel="noopener noreferrer"
+                  class="btn-icon btn-sm" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
               </div>
-              <div class="spec-meta-row">
-                <i class="fa-solid fa-building-columns"></i>
-                <span>University of Engineering &amp; Technology (UET)</span>
-              </div>
-              <div class="spec-meta-row">
-                <i class="fa-solid fa-envelope"></i>
-                <span>umairsiddiquese@gmail.com</span>
-              </div>
-              <div class="spec-meta-row">
-                <i class="fa-solid fa-circle-check status-icon-active"></i>
-                <span>Status: Available for Engineering &amp; Freelance</span>
-              </div>
-            </div>
-
-            <div class="spec-socials-row">
-              <a href="https://www.linkedin.com/in/umair-siddique-6029bb375" target="_blank" rel="noopener noreferrer"
-                class="btn-icon btn-sm" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://wa.me/923016767262" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm"
-                aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-              <a href="https://www.upwork.com/freelancers/~019ece93023d118804" target="_blank" rel="noopener noreferrer"
-                class="btn-icon btn-sm" aria-label="Upwork"><i class="fa-brands fa-upwork"></i></a>
             </div>
           </div>
 
-          <div class="about-bento-right">
-            <div class="bento-card-main glass-card">
-              <h3 class="bento-section-heading"><i class="fa-solid fa-microchip"></i> Engineering Foundation &amp;
-                Disciplines</h3>
-              <p class="bento-bio-p">
-                I am pursuing a BS in Software Engineering at the University of Engineering and Technology (UET), Lahore
-                (2025–2029). My focus spans end-to-end full-stack web engineering, resilient REST APIs, relational and
-                document database modeling, and cross-platform mobile apps.
-              </p>
-              <div class="disciplines-list" id="disciplines-container">
-                <!-- Injected via JavaScript -->
-              </div>
-            </div>
-
-            <div class="bento-metrics-row">
-              <div class="bento-metric-card glass-card">
-                <div class="metric-value">UET</div>
-                <div class="metric-label">BS Software Engineering</div>
-              </div>
-              <div class="bento-metric-card glass-card">
-                <div class="metric-value">3</div>
-                <div class="metric-label">Featured Implementations</div>
-              </div>
-              <div class="bento-metric-card glass-card">
-                <div class="metric-value">Full-Stack</div>
-                <div class="metric-label">Web &amp; Mobile Core</div>
-              </div>
-              <div class="bento-metric-card glass-card">
-                <div class="metric-value">🌍</div>
-                <div class="metric-label">Remote &amp; Contract Ready</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
+    <!-- FEATURED PROJECTS: Sleek & Impactful Gallery -->
     <section class="projects" id="projects">
       <div class="container">
         <div class="section-header">
           <div class="section-badge"><i class="fa-solid fa-laptop-code"></i> Production Systems</div>
           <h2 class="section-title">Featured <span class="gradient-text">Engineering Projects</span></h2>
-          <p class="section-desc">Explore selected software engineering work across web, utility systems, and
-            multi-tenant SaaS platforms.</p>
+          <p class="section-desc">Selected software engineering work across web applications, utility systems, and multi-tenant SaaS platforms.</p>
         </div>
         <div class="projects-filter-bar">
           <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -310,41 +286,22 @@
       </div>
     </section>
 
+    <!-- ARCHITECTURAL TECH MATRIX -->
     <section class="skills" id="tech-stack">
       <div class="container">
         <div class="section-header">
           <div class="section-badge"><i class="fa-solid fa-layer-group"></i> Architectural Stack</div>
           <h2 class="section-title">Technical Stack &amp; <span class="gradient-text">Systems Matrix</span></h2>
-          <p class="section-desc">Production-tested languages, frameworks, databases, and engineering tools — organized
-            by architectural layer without arbitrary rating gimmicks.</p>
+          <p class="section-desc">Production-tested languages, frameworks, and databases organized by architectural layer.</p>
         </div>
         <div class="tech-matrix-filter-bar" id="tech-matrix-filter-bar">
-          <button class="tech-filter-btn active" data-tech-filter="all"><i class="fa-solid fa-border-all"></i> All
-            Stack</button>
-          <button class="tech-filter-btn" data-tech-filter="languages"><i class="fa-solid fa-code"></i>
-            Languages</button>
-          <button class="tech-filter-btn" data-tech-filter="frontend"><i class="fa-solid fa-layer-group"></i>
-            Frontend</button>
-          <button class="tech-filter-btn" data-tech-filter="backend"><i class="fa-solid fa-server"></i> Backend &amp;
-            APIs</button>
-          <button class="tech-filter-btn" data-tech-filter="database"><i class="fa-solid fa-database"></i> Databases
-            &amp; Cloud</button>
+          <button class="tech-filter-btn active" data-tech-filter="all"><i class="fa-solid fa-border-all"></i> All Stack</button>
+          <button class="tech-filter-btn" data-tech-filter="languages"><i class="fa-solid fa-code"></i> Languages</button>
+          <button class="tech-filter-btn" data-tech-filter="frontend"><i class="fa-solid fa-layer-group"></i> Frontend</button>
+          <button class="tech-filter-btn" data-tech-filter="backend"><i class="fa-solid fa-server"></i> Backend &amp; APIs</button>
+          <button class="tech-filter-btn" data-tech-filter="database"><i class="fa-solid fa-database"></i> Databases &amp; Cloud</button>
         </div>
         <div class="tech-matrix-container" id="tech-matrix-container">
-          <!-- Injected via JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials" id="engineering-process">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge"><i class="fa-solid fa-gears"></i> Methodology</div>
-          <h2 class="section-title">Engineering <span class="gradient-text">Principles &amp; Pipeline</span></h2>
-          <p class="section-desc">The structured software engineering workflow applied across system architecture, type
-            safety, security validation, and production deployment.</p>
-        </div>
-        <div class="engineering-pipeline-grid" id="how-i-work-grid">
           <!-- Injected via JavaScript -->
         </div>
       </div>
