@@ -394,13 +394,13 @@ function renderProjects(filterCategory = 'all') {
 
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="empty-projects-state glass-card" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; border-radius: var(--radius-lg);">
-        <i class="fa-solid fa-laptop-code" style="font-size: 2.4rem; color: var(--accent-primary); margin-bottom: 1rem; display: inline-block;"></i>
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-primary); font-family: var(--font-display);">More Projects Coming Soon!</h3>
-        <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 1.5rem auto; font-size: 0.9rem; line-height: 1.5;">
+      <div class="empty-projects-state glass-card">
+        <i class="fa-solid fa-laptop-code empty-icon"></i>
+        <h3 class="empty-title">More Projects Coming Soon!</h3>
+        <p class="empty-desc">
           I am actively developing new software solutions in this track. Click below to view all current projects.
         </p>
-        <button class="btn btn-primary btn-sm" id="reset-filter-btn" style="margin: 0 auto; display: inline-flex; align-items: center; gap: 0.5rem;">
+        <button class="btn btn-primary btn-sm" id="reset-filter-btn">
           <i class="fa-solid fa-arrow-left"></i> <span>View All Projects</span>
         </button>
       </div>
@@ -425,32 +425,18 @@ function renderProjects(filterCategory = 'all') {
   };
 
   container.innerHTML = filtered.map(proj => {
-    const openUrl = proj.liveUrl || `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
-    const isExternal = Boolean(proj.liveUrl);
-
-    const hasLiveUrl = Boolean(proj.liveUrl);
-    const mainActionBtn = hasLiveUrl
-      ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm project-open-btn">
-           <span>Live Demo</span>
-           <i class="fa-solid fa-arrow-up-right-from-square"></i>
-         </a>`
-      : `<button class="btn btn-secondary btn-sm project-open-btn" data-open-modal="${proj.id}">
-           <span>View Specs</span>
-           <i class="fa-solid fa-layer-group"></i>
-         </button>`;
-
-    const githubBtn = proj.githubUrl
-      ? `<a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="View Source on GitHub" aria-label="View Source on GitHub">
-           <i class="fa-brands fa-github"></i>
-         </a>`
-      : '';
+    // For EduSphere or any project without liveUrl, open coming-soon.html
+    const demoUrl = proj.liveUrl || `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
 
     return `
     <div class="project-card glass-card" data-project-id="${proj.id}">
       <div class="project-banner" style="background: ${proj.imageGradient}">
         <div class="project-banner-overlay"></div>
         <div class="project-category-tag">${proj.categoryLabel}</div>
-        <span class="project-status-badge ${proj.status}">${proj.statusLabel}</span>
+        <span class="project-status-badge ${proj.status}">
+          <span class="status-pulse-dot"></span>
+          ${proj.statusLabel}
+        </span>
         <i class="${iconMap[proj.icon] || 'fa-solid fa-code'} project-icon-large"></i>
       </div>
       <div class="project-content">
@@ -460,9 +446,11 @@ function renderProjects(filterCategory = 'all') {
           ${proj.technologies.slice(0, 4).map(t => `<span class="tech-pill">${t}</span>`).join('')}
         </div>
         <div class="project-footer">
-          ${mainActionBtn}
+          <a href="${demoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm project-open-btn">
+            <span>Live Demo</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
           <div class="project-links">
-            ${githubBtn}
             <button class="btn-icon btn-sm" data-open-modal="${proj.id}" title="Architecture Details" aria-label="View Project Details">
               <i class="fa-solid fa-circle-info"></i>
             </button>
@@ -473,8 +461,6 @@ function renderProjects(filterCategory = 'all') {
   `;
   }).join('');
 }
-
-/* --- Projects Filter Setup --- */
 function setupProjectsFilter() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
@@ -543,27 +529,11 @@ function setupProjectModal() {
 
     // Links
     const liveLink = document.getElementById('modal-live-link');
-    const githubLink = document.getElementById('modal-github-link');
-
     if (liveLink) {
-      if (proj.liveUrl) {
-        liveLink.href = proj.liveUrl;
-        liveLink.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>`;
-        liveLink.classList.remove('btn-secondary');
-        liveLink.classList.add('btn-primary');
-        liveLink.style.display = 'inline-flex';
-      } else {
-        liveLink.style.display = 'none';
-      }
-    }
-
-    if (githubLink) {
-      if (proj.githubUrl) {
-        githubLink.href = proj.githubUrl;
-        githubLink.style.display = 'inline-flex';
-      } else {
-        githubLink.style.display = 'none';
-      }
+      const demoUrl = proj.liveUrl || `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
+      liveLink.href = demoUrl;
+      liveLink.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>`;
+      liveLink.style.display = 'inline-flex';
     }
 
     backdrop.classList.add('active');
