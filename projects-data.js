@@ -236,6 +236,23 @@ console.log('Building resilient software architectures that solve real problems.
       icon: "rocket",
       tag: "Production"
     }
+  ],
+
+  certifications: [
+    {
+      id: "hp-life-ai-beginners",
+      title: "AI for Beginners",
+      credentialType: "Certificate of Completion",
+      issuer: "HP LIFE | HP Foundation",
+      recipient: "Umair Siddique",
+      date: "October 30, 2026",
+      serialNumber: "1150de91-bfa2-47b9-9eb6-95f300f35d14",
+      signatory: "Michele Malejki (Executive Director, HP Foundation)",
+      pdfUrl: "assets/hp-ai-certificate.pdf",
+      previewUrl: "assets/hp-ai-certificate.svg",
+      status: "Verified Credential",
+      description: "Comprehensive course on core artificial intelligence concepts, machine learning foundations, enterprise data applications, and ethical implications."
+    }
   ]
 };
 
