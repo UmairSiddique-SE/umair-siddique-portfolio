@@ -844,7 +844,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: top center;
 
   transition: transform 0.4s ease;
 }
@@ -1906,36 +1906,15 @@ section {
   margin-bottom: 0.9rem;
 }
 
-.cert-preview-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.35s ease;
-}
+
 
 .cert-card:hover .cert-preview-img {
   transform: scale(1.03);
 }
 
-.cert-preview-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 9, 17, 0.65);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-  pointer-events: none;
-}
 
-.cert-card-preview:hover .cert-preview-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
+
+
 
 .cert-card-content {
   display: flex;
@@ -2080,7 +2059,7 @@ section {
   .cert-card {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 1.75rem;
+    
   }
 
   .contact-wrapper {
