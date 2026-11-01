@@ -428,6 +428,23 @@ function renderProjects(filterCategory = 'all') {
     const openUrl = proj.liveUrl || `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
     const isExternal = Boolean(proj.liveUrl);
 
+    const hasLiveUrl = Boolean(proj.liveUrl);
+    const mainActionBtn = hasLiveUrl
+      ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm project-open-btn">
+           <span>Live Demo</span>
+           <i class="fa-solid fa-arrow-up-right-from-square"></i>
+         </a>`
+      : `<button class="btn btn-secondary btn-sm project-open-btn" data-open-modal="${proj.id}">
+           <span>View Specs</span>
+           <i class="fa-solid fa-layer-group"></i>
+         </button>`;
+
+    const githubBtn = proj.githubUrl
+      ? `<a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon btn-sm" title="View Source on GitHub" aria-label="View Source on GitHub">
+           <i class="fa-brands fa-github"></i>
+         </a>`
+      : '';
+
     return `
     <div class="project-card glass-card" data-project-id="${proj.id}">
       <div class="project-banner" style="background: ${proj.imageGradient}">
@@ -443,15 +460,12 @@ function renderProjects(filterCategory = 'all') {
           ${proj.technologies.slice(0, 4).map(t => `<span class="tech-pill">${t}</span>`).join('')}
         </div>
         <div class="project-footer">
-          <a href="${openUrl}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''} class="btn btn-primary btn-sm project-open-btn">
-            <span>Open Project</span>
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          ${mainActionBtn}
           <div class="project-links">
-            <button class="btn-icon btn-sm" data-open-modal="${proj.id}" title="View Details" aria-label="View Project Details">
+            ${githubBtn}
+            <button class="btn-icon btn-sm" data-open-modal="${proj.id}" title="Architecture Details" aria-label="View Project Details">
               <i class="fa-solid fa-circle-info"></i>
             </button>
-
           </div>
         </div>
       </div>
@@ -529,6 +543,7 @@ function setupProjectModal() {
 
     // Links
     const liveLink = document.getElementById('modal-live-link');
+    const githubLink = document.getElementById('modal-github-link');
 
     if (liveLink) {
       if (proj.liveUrl) {
@@ -538,11 +553,16 @@ function setupProjectModal() {
         liveLink.classList.add('btn-primary');
         liveLink.style.display = 'inline-flex';
       } else {
-        liveLink.href = `coming-soon.html?project=${encodeURIComponent(proj.title)}`;
-        liveLink.innerHTML = `<i class="fa-solid fa-clock"></i> <span>Coming Soon</span>`;
-        liveLink.classList.remove('btn-primary');
-        liveLink.classList.add('btn-secondary');
-        liveLink.style.display = 'inline-flex';
+        liveLink.style.display = 'none';
+      }
+    }
+
+    if (githubLink) {
+      if (proj.githubUrl) {
+        githubLink.href = proj.githubUrl;
+        githubLink.style.display = 'inline-flex';
+      } else {
+        githubLink.style.display = 'none';
       }
     }
 
