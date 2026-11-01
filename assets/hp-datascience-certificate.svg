@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%">
+  <defs>
+    <style>
+      text {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      }
+      .mono {
+        font-family: 'Consolas', 'Courier New', monospace;
+      }
+    </style>
+    <linearGradient id="hpBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0096d6"/>
+      <stop offset="100%" stop-color="#00649d"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0096d6"/>
+      <stop offset="50%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#0077b6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean High-Def Background -->
+  <rect width="1200" height="850" fill="#ffffff"/>
+
+  <!-- Left Top Corner Swooshes -->
+  <path d="M0,0 L240,0 L0,580 Z" fill="url(#hpBlueGrad)"/>
+  <path d="M0,380 L140,0 L0,160 Z" fill="#005a8e" opacity="0.6"/>
+
+  <!-- Right Bottom Corner Swooshes -->
+  <path d="M1200,850 L960,850 L1200,550 Z" fill="url(#hpBlueGrad)"/>
+  <path d="M1200,700 L1060,850 L1200,770 Z" fill="#0077b6" opacity="0.5"/>
+
+  <!-- Double Security Border -->
+  <rect x="25" y="25" width="1150" height="800" rx="4" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="33" y="33" width="1134" height="784" rx="2" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="8 4"/>
+
+  <!-- Official Header: HP LIFE & HP Foundation -->
+  <g transform="translate(420, 68)">
+    <circle cx="45" cy="45" r="42" fill="#0096d6"/>
+    <text x="45" y="56" font-size="36" font-weight="900" font-style="italic" fill="#ffffff" text-anchor="middle">hp</text>
+    <text x="110" y="56" font-size="32" font-weight="900" fill="#0f172a" letter-spacing="1">LIFE</text>
+    <line x1="198" y1="18" x2="198" y2="72" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="250" cy="45" r="32" fill="#0096d6"/>
+    <text x="250" y="54" font-size="28" font-weight="900" font-style="italic" fill="#ffffff" text-anchor="middle">hp</text>
+    <text x="298" y="54" font-size="26" font-weight="700" fill="#334155">Foundation</text>
+  </g>
+
+  <!-- Certificate Title -->
+  <text x="600" y="235" font-size="46" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="-0.02em">Certificate of Completion</text>
+  <line x1="450" y1="260" x2="750" y2="260" stroke="url(#accentLine)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Recipient Name -->
+  <text x="600" y="335" font-size="52" font-weight="900" fill="#0284c7" text-anchor="middle" letter-spacing="-0.01em">Umair Siddique</text>
+
+  <!-- Subtext -->
+  <text x="600" y="390" font-size="24" font-weight="600" fill="#475569" text-anchor="middle">has successfully completed the HP LIFE online course</text>
+
+  <!-- Course Title Badge -->
+  <g transform="translate(600, 445)">
+    <rect x="-260" y="-36" width="520" height="54" rx="27" fill="#f0f9ff" stroke="#bae6fd" stroke-width="2"/>
+    <text x="0" y="2" font-size="33" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="-0.02em">Data Science &amp; Analytics</text>
+  </g>
+
+  <!-- Learning Outcomes -->
+  <g font-size="19" fill="#334155" text-anchor="middle" font-weight="600">
+    <text x="600" y="525">By completing this course, the above-named student has learned about some leading data science and</text>
+    <text x="600" y="555">analytics practices, methodologies, and tools, examined the benefits and challenges of a data-driven</text>
+    <text x="600" y="585">approach for businesses, and gained knowledge about some of the essential skills needed to pursue a</text>
+    <text x="600" y="615">career in the field.</text>
+  </g>
+
+  <!-- Date -->
+  <g transform="translate(600, 665)">
+    <rect x="-135" y="-18" width="270" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="6" font-size="18" font-weight="700" fill="#1e293b" text-anchor="middle">Presented 11/1/2026</text>
+  </g>
+
+  <!-- Signature -->
+  <g transform="translate(600, 725)">
+    <path d="M-90,-16 Q-70,-36 -50,-12 Q-30,6 -10,-24 Q15,-38 30,-6 Q50,-28 75,-14 Q90,-6 105,-22" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-140" y1="2" x2="140" y2="2" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="0" y="24" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">Michele Malejki</text>
+    <text x="0" y="44" font-size="15" font-weight="600" fill="#64748b" text-anchor="middle">Executive Director, HP Foundation</text>
+  </g>
+
+  <!-- Serial Number -->
+  <g transform="translate(600, 810)">
+    <text x="0" y="0" font-size="16" font-weight="700" fill="#475569" text-anchor="middle">
+      Certificate serial number: <tspan fill="#0284c7" class="mono" font-weight="800">a5e22908-fe98-4e99-8769-58740542c204</tspan>
+    </text>
+  </g>
+</svg>
+
