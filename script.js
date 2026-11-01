@@ -614,77 +614,30 @@ function initScrollObservers() {
 }
 
 function initScrollReveal() {
-  const revealObserver = new IntersectionObserver((entries) => {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-      } else {
-        entry.target.classList.remove('active');
+        observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.1,
+    threshold: 0.08,
     rootMargin: '0px 0px -20px 0px'
   });
 
-  // Section headers
-  document.querySelectorAll('.section-header').forEach(el => {
+  const targets = document.querySelectorAll(
+    '.section-header, .project-card, .tech-layer-group, .cert-card, .principle-card, .contact-card, .hero-content, .hero-photo-showcase'
+  );
+
+  targets.forEach(el => {
     if (!el.classList.contains('reveal')) {
       el.classList.add('reveal');
-      revealObserver.observe(el);
     }
-  });
-
-  // About Bento grid
-  const profileSpec = document.querySelector('.about-profile-spec');
-  const bentoRight = document.querySelector('.about-bento-right');
-  if (profileSpec && !profileSpec.classList.contains('reveal-left')) {
-    profileSpec.classList.add('reveal-left');
-    revealObserver.observe(profileSpec);
-  }
-  if (bentoRight && !bentoRight.classList.contains('reveal-right')) {
-    bentoRight.classList.add('reveal-right');
-    revealObserver.observe(bentoRight);
-  }
-
-  // Tech Layer Groups
-  document.querySelectorAll('.tech-layer-group').forEach((el, i) => {
-    if (!el.classList.contains('reveal')) {
-      el.classList.add('reveal');
-      el.style.transitionDelay = `${(i % 2) * 0.12}s`;
-      revealObserver.observe(el);
-    }
-  });
-
-  // Project cards alternating from left and right
-  document.querySelectorAll('.project-card').forEach((el, i) => {
-    const animClass = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
-    el.classList.remove('reveal-scale', 'reveal-left', 'reveal-right');
-    el.classList.add(animClass);
-    el.style.transitionDelay = `${(i % 2) * 0.12}s`;
     revealObserver.observe(el);
   });
-
-  // Engineering Pipeline cards
-  document.querySelectorAll('.pipeline-card, .how-i-work-card').forEach((el, i) => {
-    const animClass = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
-    el.classList.remove('reveal-scale', 'reveal-left', 'reveal-right');
-    el.classList.add(animClass);
-    el.style.transitionDelay = `${(i % 4) * 0.08}s`;
-    revealObserver.observe(el);
-  });
-
-  // Contact Form card reveal
-  const contactForm = document.querySelector('.contact-form-card');
-  if (contactForm && !contactForm.classList.contains('reveal-up')) {
-    contactForm.classList.add('reveal-up');
-    revealObserver.observe(contactForm);
-  }
 }
 
-/* ==========================================================================
-   7. Navbar & Scroll Spy & Progress Bar
-   ========================================================================== */
 function initNavbarAndScroll() {
   const header = document.getElementById('site-header');
   const scrollTopBtn = document.getElementById('scroll-top-btn');
