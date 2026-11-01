@@ -266,6 +266,16 @@ console.log('Building resilient software architectures that solve real problems.
       previewUrl: "assets/hp-cybersecurity-certificate.svg",
       status: "Verified Credential",
       description: "Specialized training covering modern cybersecurity attack vectors, threat analysis, data privacy principles, and defense-in-depth protocols for safeguarding cloud systems and sensitive digital assets."
+    },
+    {
+      id: "hp-life-datascience",
+      title: "Data Science & Analytics",
+      issuer: "HP Foundation (via HP LIFE)",
+      credentialId: "hp-life-datascience-2026-umair",
+      pdfUrl: "assets/hp-datascience-certificate.pdf",
+      previewUrl: "assets/hp-datascience-certificate.svg",
+      status: "Verified Credential",
+      description: "Data analysis pipelines, statistical modeling, visualization techniques, and machine learning fundamentals for business intelligence and data-driven decision making."
     }
   ]
 };
