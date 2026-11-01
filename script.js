@@ -597,7 +597,7 @@ function initScrollReveal() {
   });
 
   const targets = document.querySelectorAll(
-    '.section-header, .project-card, .tech-layer-group, .cert-card, .principle-card, .contact-card, .hero-content, .hero-photo-showcase'
+    '.section-header, .project-card, .tech-layer-group, .cert-card, .principle-card, .focus-card, .contact-card, .contact-info-card, .contact-form-card, .metrics-grid, .hero-content, .hero-photo-showcase'
   );
 
   targets.forEach(el => {
