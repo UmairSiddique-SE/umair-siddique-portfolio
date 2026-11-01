@@ -851,7 +851,8 @@ img {
 
 .avatar-container:hover .profile-photo-img {
   transform: scale(1.08);
-}
+  object-position: top center;
+  }
 
 .about-name {
   font-size: 1.6rem;
@@ -1798,12 +1799,77 @@ section {
 
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
 }
+
+/* ── Certificate Preview ─────────────────────────────────────── */
+.cert-preview-link {
+  display: block;
+  text-decoration: none;
+}
+.cert-preview-box {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background: #e8f0fe;
+}
+.cert-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+.cert-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 10px 10px 0 0;
+}
+.cert-preview-overlay i { font-size: 1.4rem; }
+.cert-preview-link:hover .cert-preview-overlay { opacity: 1; }
+.cert-id-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  margin: 0.6rem 0;
+  font-size: 0.7rem;
+  overflow: hidden;
+}
+.cert-id-label {
+  color: var(--text-muted, #94a3b8);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.cert-id-value {
+  color: var(--accent, #38bdf8);
+  font-family: monospace;
+  font-size: 0.68rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 .cert-card {
   display: flex;
