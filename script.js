@@ -234,12 +234,11 @@ function initTypewriter() {
   if (!el) return;
 
   const roles = [
-    'High-Caliber Software Engineer',
-    'Full-Stack Systems Architect',
-    'Algorithmic Problem Solver & Innovator',
-    'BS Software Engineering @ UET Lahore',
-    'Scalable Cloud & Backend Specialist',
-    'Cross-Platform Flutter & Web Engineer'
+    'Scalable Web Applications',
+    'Distributed Backend APIs',
+    'Modern Cloud Architecture',
+    'Cross-Platform Flutter Apps',
+    'High-Performance Systems'
   ];
 
   let roleIdx = 0;
