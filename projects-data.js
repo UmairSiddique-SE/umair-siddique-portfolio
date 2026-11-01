@@ -252,6 +252,20 @@ console.log('Building resilient software architectures that solve real problems.
       previewUrl: "assets/hp-ai-certificate.svg",
       status: "Verified Credential",
       description: "Comprehensive course on core artificial intelligence concepts, machine learning foundations, enterprise data applications, and ethical implications."
+    },
+    {
+      id: "hp-life-cybersecurity",
+      title: "Introduction to Cybersecurity Awareness",
+      credentialType: "Certificate of Completion",
+      issuer: "HP LIFE | HP Foundation",
+      recipient: "Umair Siddique",
+      date: "November 1, 2026",
+      serialNumber: "e6e28d4e-6ab5-4891-8de6-1a103adb8e1c",
+      signatory: "Michele Malejki (Executive Director, HP Foundation)",
+      pdfUrl: "assets/hp-cybersecurity-certificate.pdf",
+      previewUrl: "assets/hp-cybersecurity-certificate.svg",
+      status: "Verified Credential",
+      description: "Specialized training covering modern cybersecurity attack vectors, threat analysis, data privacy principles, and defense-in-depth protocols for safeguarding cloud systems and sensitive digital assets."
     }
   ]
 };

@@ -1799,8 +1799,10 @@ section {
 
 .certifications-grid {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2.25rem;
   width: 100%;
+  align-items: center;
 }
 
 .cert-card {
