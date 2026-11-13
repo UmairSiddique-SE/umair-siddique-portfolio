@@ -3,11 +3,11 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://umair-siddique.vercel.app/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://umair-siddique.vercel.app/assets/profile.jpg</image:loc>
+      <image:loc>https://umair-siddique.vercel.app/assets/profile-hd.jpg</image:loc>
       <image:title>Umair Siddique — Software Engineer and Full-Stack Developer</image:title>
       <image:caption>Umair Siddique, Software Engineer and Full-Stack Developer from UET Lahore</image:caption>
     </image:image>
